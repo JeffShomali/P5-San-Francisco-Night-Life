@@ -8,47 +8,77 @@
 
     <title>San Francisco, Sushi Spot</title>
 
-    <meta name="description" content="Source code generated using layoutit.com">
-    <meta name="author" content="LayoutIt!">
-
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <script src="js/appMl.js"></script>
+
 
 </head>
 
 <body>
 
     <div class="container-fluid">
-
         <section class="row Sf-Walpaper">
             <div class="col-md-12">
-                <div class="Sf-Walpaper-info">
-                    <h1>San Francisco, Sushi Spot</h1>
+                <div>
+                    <h1 class="Sf-Walpaper-info"> San Francisco, Sushi Spot </h1>
                 </div>
-
-
             </div>
+        </section>
+
+        <!-- START FILTERS -->
+        <section class="row">
+
+            <!--  START SEARCH -->
+            <div class="col-md-12 search-wrapper">
+                <form>
+                    <input type="text" name="focus" required class="search-box" placeholder="Search Your Favorites Sushi Place" />
+                    <button class=" close-icon " type="reset "> </button>
+                </form>
+            </div>
+            <!-- END SEARCH   -->
+        </section>
+
+        <!-- - - - - - - - - - - - - - - START MAP AND FAVORITES PLACES - - - - - - - - - - - - - - -->
+        <section class="row ">
+            <!-- START FAVORITE PLACES -->
+            <div class="col-md-4 " id="places ">
+
+                <ul id="place-list " appml-data="js/customers.js ">
+                    <li class="place-item " appml-repeat="locations ">
+                        <h4 class="place-title ">{{Title}}</h4>
+                        <p>{{City}}</p>
+                        <span>{{Rate}}</span>
+
+                    </li>
+                </ul>
+            </div>
+            <!-- FINISHED FAVORITES PLACES -->
+
+            <!-- START MAP -->
+            <div class="col-md-8 ">
+                <div id="map "></div>
+            </div>
+            <!-- FINISHED MAP -->
 
         </section>
 
+        <footer class="col-md-12 ">
+            <p>Designed by @JeffShomali</p>
+        </footer>
 
-        <div class="row">
-            <div class="col-md-6">
-            </div>
-            <div class="col-md-6">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-8">
-            </div>
-            <div class="col-md-4">
-            </div>
-        </div>
     </div>
+    <!-- - - - - - - - - - - - - - - FINISHED MAP AND FAVORITES PLACES - - - - - - - - - - - - - - -->
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
+    <!-- End container  -->
+    <script src="js/app.js "></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCkrxgjCisgIPA10JIogkI9oopPKqN9yY&libraries=places&callback=initMap " async defer></script>
+    <script src="js/jquery.min.js "></script>
+    <script src="js/bootstrap.min.js "></script>
+
+
+
 </body>
 
 </html>
