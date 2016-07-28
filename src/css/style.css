@@ -44,8 +44,9 @@ body {
     padding: 10px;
 }
 .search-wrapper {
-    width: 45%;
+    width: 90%;
     margin: auto;
+    background-color: gray;
 }
 .search-box {
     width: 100%;
