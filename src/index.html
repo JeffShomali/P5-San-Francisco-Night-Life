@@ -14,6 +14,8 @@
     <script src="js/appMl.js"></script>
 
 
+
+
 </head>
 
 <body>
@@ -45,14 +47,13 @@
             <!-- START FAVORITE PLACES -->
             <div class="col-md-4 " id="places ">
 
-                <ul id="place-list " appml-data="js/yelp.json">
-                    <li class="place-item " appml-repeat="businesses">
-                        <h4 class="place-title ">{{name}}</h4>
+                <ul id="place-list">
+                    <li class="place-item ">
+                        <h4 class="place-title ">"Title"</h4>
                         <address>
                          Address:<br>
-                         {{$.businesses[:].location.display_address[0]}}<br>
                          </address>
-                        <p>{{display_phone}}</p>
+                        <p>Phone</p>
                     </li>
                 </ul>
             </div>
@@ -74,12 +75,13 @@
     <!-- - - - - - - - - - - - - - - FINISHED MAP AND FAVORITES PLACES - - - - - - - - - - - - - - -->
 
     <!-- End container  -->
+
+
     <script src="js/app.js "></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCkrxgjCisgIPA10JIogkI9oopPKqN9yY&libraries=places&callback=initMap " async defer></script>
-    <script src="js/jquery.min.js "></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCkrxgjCisgIPA10JIogkI9oopPKqN9yY&libraries=geometry&v=3&callback=initMap">
+    </script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js "></script>
-
-
 
 </body>
 
