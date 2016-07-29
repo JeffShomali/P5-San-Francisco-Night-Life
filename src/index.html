@@ -35,10 +35,14 @@
             <!--  START SEARCH -->
             <div class="col-md-12 search-wrapper">
                 <form>
-                    <input type="text" name="focus" required class="search-box" placeholder="Search Your Favorites Sushi Place" />
-                    <button class=" close-icon " type="reset "> </button>
+                    <span class="text">Search for nearby places</span>
+                    <input class="search-box" id="places-search" type="text" placeholder="Ex: Pizza delivery in NYC" required/>
+                    <input id="go-places" type="button" value="Go">
+                    <!--<button class="close-icon" type="reset "> </button> -->
                 </form>
             </div>
+
+
             <!-- END SEARCH   -->
         </section>
 
@@ -78,7 +82,7 @@
 
 
     <script src="js/app.js "></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCkrxgjCisgIPA10JIogkI9oopPKqN9yY&libraries=geometry&v=3&callback=initMap">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCkrxgjCisgIPA10JIogkI9oopPKqN9yY&libraries=places,geometry&v=3&callback=initMap">
     </script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js "></script>
