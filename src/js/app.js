@@ -16,7 +16,7 @@ function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: {
             lat: 37.787994,
-            lng: -122.423776
+            lng: -122.42078
         },
         zoom: 13,
         mapTypeControl: false
@@ -32,9 +32,9 @@ function initMap() {
 
 
     var locations = [{
-        title: 'Sushi Zone',
+        title: 'Nara Sushi',
         location: {
-            lat: 37.787994,
+            lat: 37.790912,
             lng: -122.423776
         }
     }, {
@@ -236,3 +236,58 @@ function createMarkersForPlaces(places) {
     }
     map.fitBounds(bounds);
 }
+
+
+
+
+var fourSqAPI = {
+    "client_id": "ITE0R1YK5FQLKGDOZSBEPT1NK1WOJNMXI2MF23UZK4CFJV1Q",
+    "client_secret": "TETG0XTAT4LTIYCXOFUGXYCCOU4ZMOMI4X4BGEJGZMLNJPCQ",
+    "lat": "37.787994",
+    "long": "-122.42078",
+    "title": "Nara Sushi"
+};
+
+var url = 'https://api.foursquare.com/v2/venues/search?client_id=' + fourSqAPI.client_id + '&client_secret=' + fourSqAPI.client_secret + '&v=20130815' +
+    '&ll=' + fourSqAPI.lat + ',' + fourSqAPI.long + '&limit=15' + '&query=' + fourSqAPI.title;
+
+console.log(url);
+
+// and remember the jqxhr object for this request
+// var jqxhr = $.getJSON(url, function(data) {
+//         console.log(data);
+//     })
+//     .done(function() {
+//         console.log("Reteieving JSON Data from Foursuere Successfully.");
+//     })
+//     .fail(function() {
+//         console.log("Opps! retrieving Data from fourSqAPI Failed!");
+//    });
+//
+//
+// // Set another completion function for the request above
+// jqxhr.complete(function() {
+//     console.log("JQXHR Completeted");
+// });
+//
+ var sushiPlaces = [];
+// for (var i = 0; i < jqxhr.length; i++) {
+//      var foursquareLat = jqxhr.responseJSON.response.venues[i].location.lat;
+//      var foursquareLng =  jqxhr.responseJSON.response.venues[i].location.lng;
+//      sushiPlaces.push("lat:" + foursquareLat, "lng:" + foursquareLng);
+// }
+//
+
+$.ajax({
+    url: url,
+    dataType: 'json',
+    type: 'get',
+    cashe: false,
+    success: function(data) {
+        $(data.response.venues).each(function(index, value){
+        sushiPlaces.push( "{" + "name:" + value.name + "," + "lat:" + value.location.lat + "," + "lng:" +  value.location.lng + "}" );
+        });
+    }
+});
+
+console.log(sushiPlaces);
