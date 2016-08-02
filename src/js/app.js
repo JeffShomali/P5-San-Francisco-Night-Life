@@ -1,3 +1,125 @@
+var locations = [{
+    title: "Nara Sushi",
+    location: {
+        lat: 37.790912,
+        lng: -122.42078
+    }
+}, {
+    title: "Wayo Sushi",
+    location: {
+        lat: 37.7886,
+        lng: -122.421868
+    }
+}, {
+    title: "Sudachi Sushi & Korean BBQ",
+    location: {
+        lat: 37.7875653,
+        lng: -122.420459
+    }
+}, {
+    title: "Sushi Boat",
+    location: {
+        lat: 37.78716444969067,
+        lng: -122.409693
+    }
+}, {
+    title: "Maru Sushi",
+    location: {
+        lat: 37.78960361061905,
+        lng: -122.40871786760785
+    }
+}, {
+    title: "Sakana Sushi & Grill",
+    location: {
+        lat: 37.787843977022874,
+        lng: -122.41172790527344
+    }
+}, {
+    title: "Live Sushi Bar",
+    location: {
+        lat: 37.76467,
+        lng: -122.40351304
+    }
+}, {
+    title: "Akiko’s Restaurant & Sushi Bar",
+    location: {
+        lat: 37.7905592751754,
+        lng: -122.4046978354454
+    }
+}, {
+    title: "Okoze Sushi",
+    location: {
+        lat: 37.79913516819813,
+        lng: -122.41938691474148
+    }
+}, {
+    title: "Kyoto Sushi",
+    location: {
+        lat: 37.787157187910296,
+        lng: -122.4220061302185
+    }
+}, {
+    title: "Akiko's Sushi Bar",
+    location: {
+        lat: 37.788762910495414,
+        lng: -122.41025551612472
+    }
+}, {
+    title: "Nara",
+    location: {
+        lat: 37.772124658240934,
+        lng: -122.43081801884333
+    }
+}, {
+    title: "Sushi on North Beach",
+    location: {
+        lat: 37.801578,
+        lng: -122.41222363333333
+    }
+}, {
+    title: "Elephant Sushi",
+    location: {
+        lat: 37.78153661500664,
+        lng: -122.4169313047121
+    }
+}, {
+    title: "Domo Sushi",
+    location: {
+        lat: 37.77603201110472,
+        lng: -122.42610991001129
+    }
+}, {
+    title: "Godzila Sushi",
+    location: {
+        lat: 37.786223,
+        lng: -122.440042
+    }
+}, {
+    title: "Ace Wasabi's Rock-N-Roll Sushi",
+    location: {
+        lat: 37.80019083869483,
+        lng: -122.43791275114773
+    }
+}, {
+    title: "Blowfish Sushi to Die For",
+    location: {
+        lat: 37.75963095,
+        lng: -122.410067
+    }
+}, {
+    title: "Naracamiche",
+    location: {
+        lat: 37.7894922684423,
+        lng: -122.40643900901115
+    }
+}, {
+    title: "Sushi Time",
+    location: {
+        lat: 37.76447345365353,
+        lng: -122.43209543787728
+    }
+}];
+
 var map;
 
 // Create a new blank array for all the listing markers.
@@ -11,7 +133,6 @@ var placeMarkers = [];
 
 function initMap() {
     // Create a styles array to use with the map.
-
     // Constructor creates a new map - only center and zoom are required.
     map = new google.maps.Map(document.getElementById('map'), {
         center: {
@@ -31,47 +152,13 @@ function initMap() {
     searchBox.setBounds(map.getBounds());
 
 
-    var locations = [{
-        title: 'Nara Sushi',
-        location: {
-            lat: 37.790912,
-            lng: -122.423776
-        }
-    }, {
-        title: 'Ryoko\'s Japanese Restaurant and Bar',
-        location: {
-            lat: 37.788518,
-            lng: -122.411857
-        }
-    }, {
-        title: 'Okoze Sushi',
-        location: {
-            lat: 37.799002,
-            lng: -122.419299
-        }
-    }, {
-        title: 'Koo',
-        location: {
-            lat: 37.764384,
-            lng: -122.462354
-        }
-    }, {
-        title: 'Wayo Sushi Restaurant',
-        location: {
-            lat: 37.788692,
-            lng: -122.422235
-        }
-    }, {
-        title: 'Saru Sushi Bar',
-        location: {
-            lat: 37.751824,
-            lng: -122.428783
-        }
-    }];
+
 
 
     var largeInfowindow = new google.maps.InfoWindow();
     var bounds = new google.maps.LatLngBounds();
+
+
 
 
     // The following group uses the location array to create an array of markers on initialize.
@@ -109,13 +196,7 @@ function initMap() {
     // "go" more details for that place.
     document.getElementById('go-places').addEventListener('click', textSearchPlaces);
 
-
-
-
 } //end initMap
-
-
-
 
 
 
@@ -140,9 +221,37 @@ function populateInfoWindow(marker, infowindow) {
         function getStreetView(data, status) {
             if (status == google.maps.StreetViewStatus.OK) {
                 var nearStreetViewLocation = data.location.latLng;
-                var heading = google.maps.geometry.spherical.computeHeading(
-                    nearStreetViewLocation, marker.position);
+                var heading = google.maps.geometry.spherical.computeHeading(nearStreetViewLocation, marker.position);
+                // ------------------------- AJAX -----------------------------------
+                var fourSqAPI = {
+                    "client_id": "ITE0R1YK5FQLKGDOZSBEPT1NK1WOJNMXI2MF23UZK4CFJV1Q",
+                    "client_secret": "TETG0XTAT4LTIYCXOFUGXYCCOU4ZMOMI4X4BGEJGZMLNJPCQ",
+                };
+
+                var FSurl = 'https://api.foursquare.com/v2/venues/search?client_id=' + fourSqAPI.client_id + '&client_secret=' + fourSqAPI.client_secret + '&v=20130815' +
+                    '&ll=' + locations[0].location.lat + ',' + locations[0].location.lng + '&limit=1' + '&query=' + locations[0].title;
+
+
+                var returnResult = $.ajax({
+                    url: FSurl,
+                    dataType: 'json',
+                    type: 'get',
+                    cashe: false,
+                    success: function(data) {
+                        //looping data and push retrieved data into locations object
+                        $(data.response.venues).each(function(index, value) {
+
+                        });
+                    }
+                });
+
+
+
+
+
+
                 infowindow.setContent('<div>' + marker.title + '</div><div id="pano"></div>');
+
                 var panoramaOptions = {
                     position: nearStreetViewLocation,
                     pov: {
@@ -237,57 +346,25 @@ function createMarkersForPlaces(places) {
     map.fitBounds(bounds);
 }
 
+var get4sInfo = function(loc) {
 
-
-
-var fourSqAPI = {
-    "client_id": "ITE0R1YK5FQLKGDOZSBEPT1NK1WOJNMXI2MF23UZK4CFJV1Q",
-    "client_secret": "TETG0XTAT4LTIYCXOFUGXYCCOU4ZMOMI4X4BGEJGZMLNJPCQ",
-    "lat": "37.787994",
-    "long": "-122.42078",
-    "title": "Nara Sushi"
-};
-
-var url = 'https://api.foursquare.com/v2/venues/search?client_id=' + fourSqAPI.client_id + '&client_secret=' + fourSqAPI.client_secret + '&v=20130815' +
-    '&ll=' + fourSqAPI.lat + ',' + fourSqAPI.long + '&limit=15' + '&query=' + fourSqAPI.title;
-
-console.log(url);
-
-// and remember the jqxhr object for this request
-// var jqxhr = $.getJSON(url, function(data) {
-//         console.log(data);
-//     })
-//     .done(function() {
-//         console.log("Reteieving JSON Data from Foursuere Successfully.");
-//     })
-//     .fail(function() {
-//         console.log("Opps! retrieving Data from fourSqAPI Failed!");
-//    });
-//
-//
-// // Set another completion function for the request above
-// jqxhr.complete(function() {
-//     console.log("JQXHR Completeted");
-// });
-//
- var sushiPlaces = [];
-// for (var i = 0; i < jqxhr.length; i++) {
-//      var foursquareLat = jqxhr.responseJSON.response.venues[i].location.lat;
-//      var foursquareLng =  jqxhr.responseJSON.response.venues[i].location.lng;
-//      sushiPlaces.push("lat:" + foursquareLat, "lng:" + foursquareLng);
-// }
-//
-
-$.ajax({
-    url: url,
-    dataType: 'json',
-    type: 'get',
-    cashe: false,
-    success: function(data) {
-        $(data.response.venues).each(function(index, value){
-        sushiPlaces.push( "{" + "name:" + value.name + "," + "lat:" + value.location.lat + "," + "lng:" +  value.location.lng + "}" );
-        });
-    }
-});
-
-console.log(sushiPlaces);
+    $.ajax({
+        url: url,
+        dataType: 'json',
+        type: 'get',
+        cashe: false,
+        success: function(data) {
+            //looping data and push retrieved data into locations object
+            $(data.response.venues).each(function(index, value) {
+                var su = {
+                    title: value.name,
+                    location: {
+                        lat: value.location.lat,
+                        lng: value.location.lng
+                    },
+                };
+                locations.push(su);
+            });
+        }
+    });
+}
