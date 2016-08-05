@@ -1,125 +1,412 @@
 var locations = [{
-    title: "Nara Sushi",
-    location: {
-        lat: 37.790912,
-        lng: -122.42078
-    }
+    name: "Saga Night Club",
+    formattedPhone: "(415) 882-4435",
+    address: "750 Harrison St",
+    lat: 37.7817,
+    lng: -122.399002,
+    postalCode: "94107",
+    city: "San Francisco",
+    state: "CA",
+    url: 'www.example.com',
+    filter: ['Night Club', 'Night Life', 'Dance']
 }, {
-    title: "Wayo Sushi",
-    location: {
-        lat: 37.7886,
-        lng: -122.421868
-    }
+
+    name: "El Toro Night Club",
+    formattedPhone: "(415) 468-0670",
+    address: "2470 San Bruno Ave",
+    lat: 37.73076295852661,
+    lng: -122.404949,
+    postalCode: "94134",
+    city: "San Francisco",
+    state: "CA",
+    url: 'www.example.com',
+    filter: ['Night Club', 'Night Life', 'Dance']
 }, {
-    title: "Sudachi Sushi & Korean BBQ",
-    location: {
-        lat: 37.7875653,
-        lng: -122.420459
-    }
+
+    name: "el toro night club",
+    formattedPhone: "(415) 882-4435",
+    lat: 37.7306713,
+    lng: -122.4052746,
+    postalCode: "94105",
+    city: "San Francisco",
+    state: "CA",
+    url: 'www.example.com',
+    filter: ['Night Club', 'Night Life', 'Dance']
 }, {
-    title: "Sushi Boat",
-    location: {
-        lat: 37.78716444969067,
-        lng: -122.409693
-    }
+
+    name: "Temple Night Club",
+    formattedPhone: "(415) 882-4435",
+    address: "540 Howard St",
+    lat: 37.81815270099963,
+    lng: -122.34477495801933,
+    postalCode: "94105",
+    city: "San Francisco",
+    state: "CA",
+    url: 'www.example.com',
+    filter: ['Night Club', 'Night Life', 'Dance']
 }, {
-    title: "Maru Sushi",
-    location: {
-        lat: 37.78960361061905,
-        lng: -122.40871786760785
-    }
+
+    name: "Study all night Club",
+    formattedPhone: "(415) 882-4435",
+    lat: 37.721531,
+    lng: -122.459652,
+    postalCode: "94105",
+    city: "San Francisco",
+    state: "CA",
+    url: 'www.example.com',
+    filter: ['Night Club', 'Night Life', 'Dance']
+
 }, {
-    title: "Sakana Sushi & Grill",
-    location: {
-        lat: 37.787843977022874,
-        lng: -122.41172790527344
-    }
+    name: "Wayo Sushi",
+    formattedPhone: "(415) 474-8369",
+    address: "1407 Van Ness Ave",
+    lat: 37.7886,
+    lng: -122.421868,
+    postalCode: "94109",
+    city: "San Francisco",
+    state: "CA",
+    url: "http://sushiboat-hub.com",
+    filter: ['sushi', 'food', 'bar']
 }, {
-    title: "Live Sushi Bar",
-    location: {
-        lat: 37.76467,
-        lng: -122.40351304
-    }
+    name: "Nara Sushi",
+    formattedPhone: "(415) 567-1515",
+    address: "1515 Polk St",
+    lat: 37.790912,
+    lng: -122.42078,
+    postalCode: "94109",
+    city: "San Francisco",
+    state: "CA",
+    url: "http://sushiboat-hub.com",
+    filter: ['sushi', 'food', 'bar']
 }, {
-    title: "Akiko’s Restaurant & Sushi Bar",
-    location: {
-        lat: 37.7905592751754,
-        lng: -122.4046978354454
-    }
+    name: "Sushi Boat",
+    formattedPhone: "(415) 781-5111",
+    address: "389 Geary St",
+    lat: 37.78716444969067,
+    lng: -122.409693,
+    postalCode: "94102",
+    city: "San Francisco",
+    state: "CA",
+    url: "http://sushiboat-hub.com",
+    filter: ['sushi', 'food', 'bar']
+
 }, {
-    title: "Okoze Sushi",
-    location: {
-        lat: 37.79913516819813,
-        lng: -122.41938691474148
-    }
+    name: "Sakana Sushi & Grill",
+    formattedPhone: "(415) 775-7644",
+    address: "605 Post St",
+    lat: 37.787843977022874,
+    lng: -122.41172790527344,
+    postalCode: "94109",
+    city: "San Francisco",
+    state: "CA",
+    url: "http://sfsakana.com",
+    filter: ['sushi', 'food', 'bar']
 }, {
-    title: "Kyoto Sushi",
-    location: {
-        lat: 37.787157187910296,
-        lng: -122.4220061302185
-    }
+    name: "Maru Sushi",
+    formattedPhone: "(415) 393-9911",
+    address: "529 Powell St",
+    lat: 37.78960361061905,
+    lng: -122.40871786760785,
+    postalCode: "94108",
+    city: "San Francisco",
+    state: "CA",
+    url: "http://sushiboat-hub.com",
+    filter: ['sushi', 'food', 'bar']
 }, {
-    title: "Akiko's Sushi Bar",
-    location: {
-        lat: 37.788762910495414,
-        lng: -122.41025551612472
-    }
+    name: "Akiko’s Restaurant & Sushi Bar",
+    formattedPhone: "(415) 397-3218",
+    address: "431 Bush St",
+    lat: 37.7905592751754,
+    lng: -122.4046978354454,
+    postalCode: "94108",
+    city: "San Francisco",
+    state: "CA",
+    url: "http://akikosrestaurant.com",
+    filter: ['sushi', 'food', 'bar']
+
 }, {
-    title: "Nara",
-    location: {
-        lat: 37.772124658240934,
-        lng: -122.43081801884333
-    }
+    name: "Okoze Sushi",
+    formattedPhone: "(415) 567-3397",
+    address: "1207 Union St",
+    lat: 37.79913516819813,
+    lng: -122.41938691474148,
+    postalCode: "94109",
+    city: "San Francisco",
+    state: "CA",
+    url: "http://sushiboat-hub.com",
+    filter: ['sushi', 'food', 'bar']
 }, {
-    title: "Sushi on North Beach",
-    location: {
-        lat: 37.801578,
-        lng: -122.41222363333333
-    }
+    name: "Sudachi Sushi & Korean BBQ",
+    formattedPhone: "(415) 931-6951",
+    address: "1217 Sutter St",
+    lat: 37.7875653,
+    lng: -122.420459,
+    postalCode: "94109",
+    city: "San Francisco",
+    state: "CA",
+    url: "http://sudachisf.net",
+    filter: ['sushi', 'food', 'bar']
 }, {
-    title: "Elephant Sushi",
-    location: {
-        lat: 37.78153661500664,
-        lng: -122.4169313047121
-    }
+    name: "Live Sushi Bar",
+    formattedPhone: "(415) 861-8610",
+    address: "2001 17th St",
+    lat: 37.76467,
+    lng: -122.40351304,
+    postalCode: "94103",
+    city: "San Francisco",
+    state: "CA",
+    url: "http://www.livesushibar.com/",
+    filter: ['sushi', 'food', 'bar']
 }, {
-    title: "Domo Sushi",
-    location: {
-        lat: 37.77603201110472,
-        lng: -122.42610991001129
-    }
+    name: "Elephant Sushi",
+    formattedPhone: "(415) 359-9001",
+    address: "380 Golden Gate Ave",
+    lat: 37.78153661500664,
+    lng: -122.4169313047121,
+    postalCode: "94102",
+    city: "San Francisco",
+    state: "CA",
+    url: "http://elephantsushi.com",
+    filter: ['sushi', 'food', 'bar']
 }, {
-    title: "Godzila Sushi",
-    location: {
-        lat: 37.786223,
-        lng: -122.440042
-    }
+    name: "Oaktown 8s Square Dance club",
+    formattedPhone: "(415) 633-3900",
+    address: "747 Market St",
+    lat: 37.81148696748271,
+    lng: -122.26081093886104,
+    postalCode: "94109",
+    city: "Oakland",
+    state: "CA",
+    url: "http://www.SmallFryDanceClub.com",
+    filter: ['Dance']
 }, {
-    title: "Ace Wasabi's Rock-N-Roll Sushi",
-    location: {
-        lat: 37.80019083869483,
-        lng: -122.43791275114773
-    }
+
+    name: "Equinox Sports Club San Francisco",
+    formattedPhone: "(415) 633-3900",
+    address: "747 Market St",
+    lat: 37.786451314671154,
+    lng: -122.40423113107681,
+    postalCode: "94103",
+    city: "San Francisco",
+    state: "CA",
+    url: "http://www.facebook.com/equinox",
+    filter: ['Dance']
+
 }, {
-    title: "Blowfish Sushi to Die For",
-    location: {
-        lat: 37.75963095,
-        lng: -122.410067
-    }
+    name: "Liholiho Yacht Club",
+    formattedPhone: "(415) 440-5446",
+    address: "871 Sutter St",
+    lat: 37.78836869881094,
+    lng: -122.4145862541547,
+    postalCode: "94109",
+    city: "San Francisco",
+    state: "CA",
+    url: "http://liholihoyachtclub.com",
+    filter: ['Dance']
 }, {
-    title: "Naracamiche",
-    location: {
-        lat: 37.7894922684423,
-        lng: -122.40643900901115
-    }
+
+    name: "Napa Dance Club",
+    formattedPhone: "(415) 633-3900",
+    address: "747 Market St",
+    lat: 37.489222,
+    lng: -122.239173,
+    postalCode: "94062",
+    city: "Redwood City",
+    state: "CA",
+    url: "http://www.SmallFryDanceClub.com",
+    filter: ['Dance']
 }, {
-    title: "Sushi Time",
-    location: {
-        lat: 37.76447345365353,
-        lng: -122.43209543787728
-    }
+
+    name: "Small Fry Dance Club",
+    formattedPhone: "(650) 393-5593",
+    address: "1528 S El Camino Real Ste 208",
+    lat: 37.55348327633724,
+    lng: -122.3159408569336,
+    postalCode: "94402",
+    city: "San Mateo",
+    state: "CA",
+    url: "http://www.SmallFryDanceClub.com",
+    filter: ['Dance']
 }];
 
+
+
+// Night Mode Style
+var styleArray = [{
+    "featureType": "all",
+    "elementType": "labels",
+    "stylers": [{
+        "visibility": "on"
+    }]
+}, {
+    "featureType": "all",
+    "elementType": "labels.text.fill",
+    "stylers": [{
+        "saturation": 36
+    }, {
+        "color": "#000000"
+    }, {
+        "lightness": 40
+    }]
+}, {
+    "featureType": "all",
+    "elementType": "labels.text.stroke",
+    "stylers": [{
+        "visibility": "on"
+    }, {
+        "color": "#000000"
+    }, {
+        "lightness": 16
+    }]
+}, {
+    "featureType": "all",
+    "elementType": "labels.icon",
+    "stylers": [{
+        "visibility": "off"
+    }]
+}, {
+    "featureType": "administrative",
+    "elementType": "geometry.fill",
+    "stylers": [{
+        "color": "#000000"
+    }, {
+        "lightness": 20
+    }]
+}, {
+    "featureType": "administrative",
+    "elementType": "geometry.stroke",
+    "stylers": [{
+        "color": "#000000"
+    }, {
+        "lightness": 17
+    }, {
+        "weight": 1.2
+    }]
+}, {
+    "featureType": "administrative.country",
+    "elementType": "labels.text.fill",
+    "stylers": [{
+        "color": "#ed5929"
+    }]
+}, {
+    "featureType": "administrative.locality",
+    "elementType": "labels.text.fill",
+    "stylers": [{
+        "color": "#c4c4c4"
+    }]
+}, {
+    "featureType": "administrative.neighborhood",
+    "elementType": "labels.text.fill",
+    "stylers": [{
+        "color": "#ed5929"
+    }]
+}, {
+    "featureType": "landscape",
+    "elementType": "geometry",
+    "stylers": [{
+        "color": "#000000"
+    }, {
+        "lightness": 20
+    }]
+}, {
+    "featureType": "poi",
+    "elementType": "geometry",
+    "stylers": [{
+        "color": "#000000"
+    }, {
+        "lightness": 21
+    }, {
+        "visibility": "on"
+    }]
+}, {
+    "featureType": "poi.business",
+    "elementType": "geometry",
+    "stylers": [{
+        "visibility": "on"
+    }]
+}, {
+    "featureType": "road.highway",
+    "elementType": "geometry.fill",
+    "stylers": [{
+        "color": "#ed5929"
+    }, {
+        "lightness": "0"
+    }]
+}, {
+    "featureType": "road.highway",
+    "elementType": "geometry.stroke",
+    "stylers": [{
+        "visibility": "off"
+    }]
+}, {
+    "featureType": "road.highway",
+    "elementType": "labels.text.fill",
+    "stylers": [{
+        "color": "#ffffff"
+    }]
+}, {
+    "featureType": "road.highway",
+    "elementType": "labels.text.stroke",
+    "stylers": [{
+        "color": "#ed5929"
+    }]
+}, {
+    "featureType": "road.arterial",
+    "elementType": "geometry",
+    "stylers": [{
+        "color": "#000000"
+    }, {
+        "lightness": 18
+    }]
+}, {
+    "featureType": "road.arterial",
+    "elementType": "geometry.fill",
+    "stylers": [{
+        "color": "#575757"
+    }]
+}, {
+    "featureType": "road.arterial",
+    "elementType": "labels.text.fill",
+    "stylers": [{
+        "color": "#ffffff"
+    }]
+}, {
+    "featureType": "road.arterial",
+    "elementType": "labels.text.stroke",
+    "stylers": [{
+        "color": "#2c2c2c"
+    }]
+}, {
+    "featureType": "road.local",
+    "elementType": "geometry",
+    "stylers": [{
+        "color": "#000000"
+    }, {
+        "lightness": 16
+    }]
+}, {
+    "featureType": "road.local",
+    "elementType": "labels.text.fill",
+    "stylers": [{
+        "color": "#999999"
+    }]
+}, {
+    "featureType": "transit",
+    "elementType": "geometry",
+    "stylers": [{
+        "color": "#000000"
+    }, {
+        "lightness": 19
+    }]
+}, {
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [{
+        "color": "#000000"
+    }, {
+        "lightness": 17
+    }]
+}];
 var map;
 
 // Create a new blank array for all the listing markers.
@@ -144,6 +431,7 @@ function initMap() {
     });
 
 
+
     // ___________________ AUTO COMPLETE __________________
     // This autocomplete is for use in the search within time entry box.
     var searchBox = new google.maps.places.SearchBox(
@@ -152,9 +440,7 @@ function initMap() {
     searchBox.setBounds(map.getBounds());
 
 
-
-
-
+    // Initiate InfoWindow
     var largeInfowindow = new google.maps.InfoWindow();
     var bounds = new google.maps.LatLngBounds();
 
@@ -228,29 +514,31 @@ function populateInfoWindow(marker, infowindow) {
                     "client_secret": "TETG0XTAT4LTIYCXOFUGXYCCOU4ZMOMI4X4BGEJGZMLNJPCQ",
                 };
 
-                var FSurl = 'https://api.foursquare.com/v2/venues/search?client_id=' + fourSqAPI.client_id + '&client_secret=' + fourSqAPI.client_secret + '&v=20130815' +
-                    '&ll=' + locations[0].location.lat + ',' + locations[0].location.lng + '&limit=1' + '&query=' + locations[0].title;
+                var markerLenght = markers.length;
+                for (var i = 0; i < markerLenght; i++) {
+                    var foursquareAPIurl = 'https://api.foursquare.com/v2/venues/search?client_id=' + fourSqAPI.client_id + '&client_secret=' + fourSqAPI.client_secret + '&v=20130815' +
+                        '&ll=' + markers[i].position.lat() + ',' + markers[i].position.lng() + '&limit=10' + '&query=' + markers[i].title;
 
 
-                var returnResult = $.ajax({
-                    url: FSurl,
-                    dataType: 'json',
-                    type: 'get',
-                    cashe: false,
-                    success: function(data) {
-                        //looping data and push retrieved data into locations object
-                        $(data.response.venues).each(function(index, value) {
+                    $.ajax({
+                        url: foursquareAPIurl,
+                        dataType: 'json',
+                        type: 'get',
+                        cashe: false,
+                        success: function(data) {
 
-                        });
-                    }
-                });
+                            //looping data and push retrieved data into locations object
+                            $(data.response.venues).each(function(index, value) {
+                                title = value.name;
+                                phone = value.contact.formattedPhone;
+                                address = value.location.formattedAddress;
 
+                            });
+                        }
+                    });
+                    infowindow.setContent('<div>' + title + '<br>' + phone + '<br>' + address.city + '</div><div id="pano"></div>');
+                } //end loop
 
-
-
-
-
-                infowindow.setContent('<div>' + marker.title + '</div><div id="pano"></div>');
 
                 var panoramaOptions = {
                     position: nearStreetViewLocation,
@@ -344,27 +632,4 @@ function createMarkersForPlaces(places) {
         }
     }
     map.fitBounds(bounds);
-}
-
-var get4sInfo = function(loc) {
-
-    $.ajax({
-        url: url,
-        dataType: 'json',
-        type: 'get',
-        cashe: false,
-        success: function(data) {
-            //looping data and push retrieved data into locations object
-            $(data.response.venues).each(function(index, value) {
-                var su = {
-                    title: value.name,
-                    location: {
-                        lat: value.location.lat,
-                        lng: value.location.lng
-                    },
-                };
-                locations.push(su);
-            });
-        }
-    });
 }

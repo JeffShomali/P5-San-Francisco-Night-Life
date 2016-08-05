@@ -1,0 +1,22 @@
+{
+  "name": "src",
+  "homepage": "https://github.com/JeffShomali/P5-San-Francisco-Sushi-Spot",
+  "authors": [
+    "Jeff Shomali <jeffshomali@gmail.com>"
+  ],
+  "description": "Google Map Application",
+  "main": "app.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "knockout": "^3.4.0",
+    "bootstrap": "^3.3.7"
+  }
+}
