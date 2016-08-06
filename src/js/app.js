@@ -1,3 +1,5 @@
+"use strict";
+
 var locations = [{
     name: "Saga Night Club",
     formattedPhone: "(415) 882-4435",
@@ -230,8 +232,7 @@ var locations = [{
 }];
 
 
-
-// Night Mode Style
+//Night Mode Style
 var styleArray = [{
     "featureType": "all",
     "elementType": "labels",
@@ -407,29 +408,34 @@ var styleArray = [{
         "lightness": 17
     }]
 }];
-var map;
-
-// Create a new blank array for all the listing markers.
-var markers = [];
-
-// Create placemarkers array to use in multiple functions to have control
-// over the number of places that show.
-var placeMarkers = [];
 
 
+var fourSquareAPI = {
+     "client_id": "ITE0R1YK5FQLKGDOZSBEPT1NK1WOJNMXI2MF23UZK4CFJV1Q",
+     "client_secret": "TETG0XTAT4LTIYCXOFUGXYCCOU4ZMOMI4X4BGEJGZMLNJPCQ",
+};
 
-function initMap() {
-    // Create a styles array to use with the map.
-    // Constructor creates a new map - only center and zoom are required.
-    map = new google.maps.Map(document.getElementById('map'), {
+var googleMapObject = {
+    map: {},
+    options: {
         center: {
-            lat: 37.787994,
-            lng: -122.42078
+            lat: 37.7886,
+            lng: -122.4218
         },
         zoom: 13,
-        mapTypeControl: false
-    });
+        mapTypeControl: false,
+        styles: styleArray
+    },
 
+    largeInfoWindow: new google.maps.InfoWindow(),
+    infoWindowContent: '<div class="info-window"><div class="window-title">%name%</div><div class="window-address">%address%</div></div>',
+
+    initMap: function(viewM) {
+
+        googleMapObject.map = new google.maps.Map(document.getElementById('map'), googleMapObject.options);
+        if (viewM.initialized && !viewM.hasMarkers) viewM.showMarkers();
+    }
+};
 
 
     // ___________________ AUTO COMPLETE __________________
