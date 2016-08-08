@@ -1,158 +1,344 @@
-@import "url(http://fonts.googleapis.com/css?family=Lato:300","400","700)";
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 
-body {
-  margin-bottom : 30px;
-  color         : #333;
-  font-family   : 'Lato',
-                  sans-serif;
-  font-weight   : 300;
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-.Sf-Walpaper {
-  position        : relative;
-  width           : 100%;
-  height          : 400px;
-  background      : url(../images/SF-Walpaper.jpg);
-  background-size : cover;
+html, body{
+	width: 100%;
+	height: 100%;
+	background-color: whitesmoke;
 }
 
-.Sf-Walpaper-info {
-  position : absolute;
+body{
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	color: #333;
+	margin-bottom: 30px;
 }
 
-.Sf-Walpaper-info h1 {
-  margin-bottom : 20px;
-  text-shadow   : 1px 1px 3px rgba(0, 0, 0, 0.25);
-  font-size     : 4em;
+/* Wallpaper */
+
+#slider {
+	position: relative;
+	width: 100%;
+	height: 400px;
+	background: url(../img/SF-Walpaper.png);
+    background-size: cover;
 }
 
-.filter-wrapper {
-  position         : relative;
-  width            : 100%;
-  min-height       : 55px;
-  padding          : 10px;
-  background-color : #BBB;
+.slider-header {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -80px;
+	margin-left: -96.5px;
+	text-align: center;
+	color: #fff;
 }
 
-/* - - - - - - - - - SEARCBOX START - - - - - - - - - */
 
-.close-icon,
-.search-box,
-.search-wrapper {
-  position : relative;
-  padding  : 10px;
+.slider-header h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
 }
 
-.search-wrapper {
-  width            : 90%;
-  margin           : auto;
-  background-color : gray;
+.slider-header a {
+    color:  #fff;
+    text-decoration: none;
+    font-weight: 400;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    padding: 5px 20px;
+    background-color: rgba(0,0,0,0.25);
+    cursor: pointer;
 }
 
-.search-box {
-  width         : 100%;
-  border        : 1px solid #ccc;
-  border-radius : 15px;
-  outline       : 0;
+.slider-header a:hover {
+	border-width: 1px;
+	opacity: .7;
 }
 
-.search-box:focus {
-  border     : 2px solid #bebede;
-  box-shadow : 0 0 15px 5px #b0e0ee;
+
+
+#filter-wrapper {
+	background-color: #333333;
+	width:  100%;
+	padding: 10px;
+	min-height: 55px;
+	position: relative;
 }
 
-.close-icon {
-  display          : inline-block;
-  border           : 1px solid transparent;
-  background-color : transparent;
-  outline          : 0;
-  vertical-align   : middle;
-  cursor           : pointer;
+#filters-box-wrapper {
+    margin: 5px auto 0 0px;
+    position: relative;
+    bottom: 0;
 }
 
-.close-icon:after {
-  z-index          : 1;
-  content          : "X";
-  display          : block;
-  position         : absolute;
-  top              : 0;
-  right            : 35px;
-  bottom           : 0;
-  width            : 15px;
-  height           : 15px;
-  margin           : auto;
-  padding          : 2px;
-  color            : white;
-  border-radius    : 50%;
-  background-color : #FA9595;
-  box-shadow       : 0 0 2px #E50F0F;
-  text-align       : center;
-  font-size        : 12px;
-  font-weight      : normal;
-  cursor           : pointer;
+.filter {
+    display: inline-block;
 }
 
-.search-box:not(:valid)~ .close-icon {
-  display : none;
+.filter-label{
+	padding: 6px 9px;
+	margin-right: 2px;
+	opacity: .5;
+	cursor: pointer;
+	background-color: #fff;
+    display: block;
+
+	font-size: 12px;
+	line-height: 12px;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
-/* - - - - - - - - - SEARCHBOX FINISHED - - - - - - - - - */
-
-/* - - - - - - - - - START FAVORITES PLACES - - - - - - - - - */
-
-#places {
-  border-left      : 1px solid grey;
-  background-color : #E9E5DC;
-  /*
-  height: 100%;
-  	width: 30%;
-  	float: right;
-  */
+input[type="checkbox"]{
+	display: none;
 }
 
-#place-list {
-  height     : 100%;
-  overflow-y : scroll;
+input[type="checkbox"]:checked + .filter-label{
+	background-color: #fff;
+	opacity: 1;
+	margin-bottom: 6px;
 }
 
-.place-title {
-  font-size : 1.2em;
+#search-box-wrapper {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 999;
 }
 
-.place-item {
-  padding          : 10px 5px;
-  border-bottom    : 1px solid grey;
-  background-color : #fff;
-  font-size        : 14px;
-  list-style       : none;
-  cursor           : pointer;
+
+
+/* - - - - - - -  - - - - - - - - - - - - - - - - - Search Box - - - - - - -  - - - - - - - - - - - - - - - - -  */
+input {
+	outline: none;
 }
 
-/* - - - - - - - - - FINISHED FAVORITES PLACES - - - - - - - - - */
-
-/* START MAP */
-
-#map {
-  height : 742px;
+input[type=search] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 100%;
 }
 
-#pano {
-  width  : 200px;
-  height : 200px;
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+	display: none;
 }
 
-.text {
-  font-size : 12px;
+
+input[type=search] {
+	background: #ededed url(http://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png)
+	no-repeat 9px center;
+	border: solid 1px #ccc;
+	padding: 9px 10px 9px 32px;
+	width: 155px;
+
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
 }
 
-/* END MAP */
+input[type=search]:focus {
+	width: 130px;
+	background-color: #fff;
+	border-color: #66CC75;
 
-/* Footer */
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+
+input:-moz-placeholder {
+	color: #999;
+}
+
+input::-webkit-input-placeholder {
+	color: #999;
+}
+
+
+#search-form input[type=search] {
+	width: 15px;
+	padding-left: 10px;
+	color: transparent;
+	cursor: pointer;
+}
+#search-form input[type=search]:hover {
+	background-color: #fff;
+}
+#search-form input[type=search]:focus {
+	width: 250px;
+	padding-left: 32px;
+	color: #000;
+	background-color: #fff;
+	cursor: auto;
+}
+#search-form input:-moz-placeholder {
+	color: transparent;
+}
+#search-form input::-webkit-input-placeholder {
+	color: transparent;
+}
+
+
+
+/* - - - - - - -  - - - - - - - - - - - - - - - - -  Main & Map - - - - - - -  - - - - - - - - - - - - - - - - - */
+main{
+	width: 100%;
+	position: relative;
+	height: 450px;
+}
+
+
+#map{
+	background-color: #2b2b2b;
+	float: left;
+	width: 70%;
+	height: 100%;
+}
+
+#location-wrapper {
+	background-color: #2b2b2b;
+	height: 100%;
+	width: 30%;
+	float: left;
+	border-right: 1px solid grey;
+}
+
+#list-of-locations {
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.location-name {
+    font-size: 1.1em;
+	color: #f2a62a;
+}
+
+.location-table {
+    list-style: none;
+    padding: 10px 5px;
+    border-bottom: 1px solid grey;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+
+.placebox {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #353535;
+    background-size: cover;
+    color: #fff;
+}
+
+.placebox:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+.place-img-container {
+	float: left;
+    padding-left: 20px;
+    width: 40%;
+
+}
+
+
+
+/* - - - - - - - - - - - - - - - - - - - - - Footer - - - - - - - - - - - - - - - - - - - - -  */
 
 footer {
-  padding          : 10px;
-  color            : #666;
-  background-color : black;
-  text-align       : center;
-  font-size        : .8em;
+    padding: 10px;
+	color: #f2a62a;
+    text-align: center;
+    font-size: .9em;
+    background-color:#333333;
+}
+
+
+
+@media(min-width: 1024px) {
+	main {
+		height: 600px;
+	}
+
+	#slider {
+		height: 500px;
+	}
+
+	#location-wrapper {
+		width: 25%;
+	}
+
+	#map {
+		width: 75%;
+	}
+
+	.place-img-container {
+		width: 30%;
+	}
+
+	.location-callback {
+		width: 70%;
+	}
+}
+
+@media(max-height: 736px) {
+	#slider {
+		height: 100%;
+	}
+}
+
+@media(max-width: 699px) {
+	#search-box-wrapper {
+	    position: relative;
+	    top: inherit;
+	    right: inherit;
+	}
+
+	#filters-box-wrapper {
+	    margin-top: 12px;
+	}
+
+	.search-input {
+	    width: 100%;
+	}
+
+	.place-img-container {
+	    width: 30%;
+	}
+
+	.location-callback {
+	    width: 70%;
+	}
 }
