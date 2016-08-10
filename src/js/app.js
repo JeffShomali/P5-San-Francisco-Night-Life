@@ -1,238 +1,191 @@
 "use strict";
 
+/**
+ * [locations description]
+ * @type {Array}
+ */
 var locations = [{
+    id: "45ac12d6f964a5205d411fe3",
     name: "Saga Night Club",
     formattedPhone: "(415) 882-4435",
-    address: "750 Harrison St",
+    address: "750 Harrison St, San Francisco, CA, 94107",
     lat: 37.7817,
     lng: -122.399002,
-    postalCode: "94107",
-    city: "San Francisco",
-    state: "CA",
     url: 'www.example.com',
     filter: ['Night Club', 'Night Life', 'Dance']
 }, {
-
+    id: "45ac12d6f964a5205d411fe3",
     name: "El Toro Night Club",
     formattedPhone: "(415) 468-0670",
-    address: "2470 San Bruno Ave",
+    address: "2470 San Bruno Ave, San Francisco, CA, 94134",
     lat: 37.73076295852661,
     lng: -122.404949,
-    postalCode: "94134",
-    city: "San Francisco",
-    state: "CA",
     url: 'www.example.com',
     filter: ['Night Club', 'Night Life', 'Dance']
 }, {
-
-    name: "el toro night club",
-    formattedPhone: "(415) 882-4435",
-    lat: 37.7306713,
-    lng: -122.4052746,
-    postalCode: "94105",
-    city: "San Francisco",
-    state: "CA",
-    url: 'www.example.com',
-    filter: ['Night Club', 'Night Life', 'Dance']
-}, {
-
+    id: "45ac12d6f964a5205d411fe3",
     name: "Temple Night Club",
     formattedPhone: "(415) 882-4435",
-    address: "540 Howard St",
+    address: "540 Howard St, San Francisco, CA, 94105",
     lat: 37.81815270099963,
     lng: -122.34477495801933,
-    postalCode: "94105",
-    city: "San Francisco",
-    state: "CA",
     url: 'www.example.com',
     filter: ['Night Club', 'Night Life', 'Dance']
 }, {
-
+    id: "45ac12d6f964a5205d411fe3",
     name: "Study all night Club",
     formattedPhone: "(415) 882-4435",
+    address: "San Francisco, CA,94105",
     lat: 37.721531,
     lng: -122.459652,
-    postalCode: "94105",
-    city: "San Francisco",
-    state: "CA",
     url: 'www.example.com',
     filter: ['Night Club', 'Night Life', 'Dance']
-
 }, {
+    id: "45ac12d6f964a5205d411fe3",
     name: "Wayo Sushi",
     formattedPhone: "(415) 474-8369",
-    address: "1407 Van Ness Ave",
+    address: "1407 Van Ness Ave, San Francisco, CA, 94109",
     lat: 37.7886,
     lng: -122.421868,
-    postalCode: "94109",
-    city: "San Francisco",
-    state: "CA",
     url: "http://sushiboat-hub.com",
     filter: ['sushi', 'food', 'bar']
 }, {
+    id: "45ac12d6f964a5205d411fe3",
     name: "Nara Sushi",
     formattedPhone: "(415) 567-1515",
-    address: "1515 Polk St",
+    address: "1515 Polk St, San Francisco, CA, 94109",
     lat: 37.790912,
     lng: -122.42078,
-    postalCode: "94109",
-    city: "San Francisco",
-    state: "CA",
     url: "http://sushiboat-hub.com",
     filter: ['sushi', 'food', 'bar']
 }, {
+    id: "45ac12d6f964a5205d411fe3",
     name: "Sushi Boat",
     formattedPhone: "(415) 781-5111",
-    address: "389 Geary St",
+    address: "389 Geary St, San Francisco, CA, 94102",
     lat: 37.78716444969067,
     lng: -122.409693,
-    postalCode: "94102",
-    city: "San Francisco",
-    state: "CA",
     url: "http://sushiboat-hub.com",
     filter: ['sushi', 'food', 'bar']
-
 }, {
+    id: "45ac12d6f964a5205d411fe3",
     name: "Sakana Sushi & Grill",
     formattedPhone: "(415) 775-7644",
-    address: "605 Post St",
+    address: "605 Post St, San Francisco, CA, 94109",
     lat: 37.787843977022874,
     lng: -122.41172790527344,
-    postalCode: "94109",
-    city: "San Francisco",
-    state: "CA",
     url: "http://sfsakana.com",
     filter: ['sushi', 'food', 'bar']
 }, {
+    id: "45ac12d6f964a5205d411fe3",
     name: "Maru Sushi",
     formattedPhone: "(415) 393-9911",
-    address: "529 Powell St",
+    address: "529 Powell St, San Francisco, CA, 94108",
     lat: 37.78960361061905,
     lng: -122.40871786760785,
-    postalCode: "94108",
-    city: "San Francisco",
-    state: "CA",
     url: "http://sushiboat-hub.com",
     filter: ['sushi', 'food', 'bar']
 }, {
+    id: "45ac12d6f964a5205d411fe3",
     name: "Akiko’s Restaurant & Sushi Bar",
     formattedPhone: "(415) 397-3218",
-    address: "431 Bush St",
+    address: "431 Bush St, San Francisco, CA, 94108",
     lat: 37.7905592751754,
     lng: -122.4046978354454,
-    postalCode: "94108",
-    city: "San Francisco",
-    state: "CA",
     url: "http://akikosrestaurant.com",
     filter: ['sushi', 'food', 'bar']
 
 }, {
+    id: "45ac12d6f964a5205d411fe3",
     name: "Okoze Sushi",
     formattedPhone: "(415) 567-3397",
-    address: "1207 Union St",
+    address: "1207 Union St, San Francisco, CA, 94109",
     lat: 37.79913516819813,
     lng: -122.41938691474148,
-    postalCode: "94109",
-    city: "San Francisco",
-    state: "CA",
     url: "http://sushiboat-hub.com",
     filter: ['sushi', 'food', 'bar']
 }, {
+    id: "45ac12d6f964a5205d411fe3",
     name: "Sudachi Sushi & Korean BBQ",
     formattedPhone: "(415) 931-6951",
-    address: "1217 Sutter St",
+    address: "1217 Sutter St, San Francisco, CA, 94109",
     lat: 37.7875653,
     lng: -122.420459,
-    postalCode: "94109",
-    city: "San Francisco",
-    state: "CA",
     url: "http://sudachisf.net",
     filter: ['sushi', 'food', 'bar']
 }, {
+    id: "45ac12d6f964a5205d411fe3",
     name: "Live Sushi Bar",
     formattedPhone: "(415) 861-8610",
-    address: "2001 17th St",
+    address: "2001 17th St, San Francisco, CA, 94103",
     lat: 37.76467,
     lng: -122.40351304,
-    postalCode: "94103",
-    city: "San Francisco",
-    state: "CA",
     url: "http://www.livesushibar.com/",
     filter: ['sushi', 'food', 'bar']
 }, {
+    id: "45ac12d6f964a5205d411fe3",
     name: "Elephant Sushi",
     formattedPhone: "(415) 359-9001",
-    address: "380 Golden Gate Ave",
+    address: "380 Golden Gate Ave, San Francisco, CA, 94102",
     lat: 37.78153661500664,
     lng: -122.4169313047121,
-    postalCode: "94102",
-    city: "San Francisco",
-    state: "CA",
     url: "http://elephantsushi.com",
     filter: ['sushi', 'food', 'bar']
 }, {
+    id: "45ac12d6f964a5205d411fe3",
     name: "Oaktown 8s Square Dance club",
     formattedPhone: "(415) 633-3900",
-    address: "747 Market St",
+    address: "747 Market St, Oakland, CA, 94109",
+    postalCode: "",
     lat: 37.81148696748271,
     lng: -122.26081093886104,
-    postalCode: "94109",
-    city: "Oakland",
-    state: "CA",
     url: "http://www.SmallFryDanceClub.com",
     filter: ['Dance']
 }, {
-
+    id: "45ac12d6f964a5205d411fe3",
     name: "Equinox Sports Club San Francisco",
     formattedPhone: "(415) 633-3900",
-    address: "747 Market St",
+    address: "747 Market St, San Francisco, CA, 94103",
     lat: 37.786451314671154,
     lng: -122.40423113107681,
-    postalCode: "94103",
-    city: "San Francisco",
-    state: "CA",
     url: "http://www.facebook.com/equinox",
     filter: ['Dance']
-
 }, {
+    id: "45ac12d6f964a5205d411fe3",
     name: "Liholiho Yacht Club",
     formattedPhone: "(415) 440-5446",
-    address: "871 Sutter St",
+    address: "871 Sutter St, San Francisco, CA, 94109",
     lat: 37.78836869881094,
     lng: -122.4145862541547,
-    postalCode: "94109",
-    city: "San Francisco",
-    state: "CA",
     url: "http://liholihoyachtclub.com",
     filter: ['Dance']
 }, {
-
+    id: "45ac12d6f964a5205d411fe3",
     name: "Napa Dance Club",
     formattedPhone: "(415) 633-3900",
-    address: "747 Market St",
+    address: "747 Market St, Redwood City, CA, 94062",
     lat: 37.489222,
     lng: -122.239173,
-    postalCode: "94062",
-    city: "Redwood City",
-    state: "CA",
     url: "http://www.SmallFryDanceClub.com",
     filter: ['Dance']
 }, {
-
+    id: "45ac12d6f964a5205d411fe3",
     name: "Small Fry Dance Club",
     formattedPhone: "(650) 393-5593",
-    address: "1528 S El Camino Real Ste 208",
+    address: "1528 S El Camino Real Ste 208, San Mateo, CA, 94402 ",
+    postalCode: "",
     lat: 37.55348327633724,
     lng: -122.3159408569336,
-    postalCode: "94402",
-    city: "San Mateo",
-    state: "CA",
     url: "http://www.SmallFryDanceClub.com",
     filter: ['Dance']
 }];
 
 
 //Night Mode Style
+/**
+ * [styleArray description]
+ * @type {Array}
+ */
 var styleArray = [{
     "featureType": "all",
     "elementType": "labels",
@@ -409,12 +362,19 @@ var styleArray = [{
     }]
 }];
 
-
+/**
+ * [fourSquareAPI description]
+ * @type {Object}
+ */
 var fourSquareAPI = {
-     "client_id": "ITE0R1YK5FQLKGDOZSBEPT1NK1WOJNMXI2MF23UZK4CFJV1Q",
-     "client_secret": "TETG0XTAT4LTIYCXOFUGXYCCOU4ZMOMI4X4BGEJGZMLNJPCQ",
+    "client_id": "ITE0R1YK5FQLKGDOZSBEPT1NK1WOJNMXI2MF23UZK4CFJV1Q",
+    "client_secret": "TETG0XTAT4LTIYCXOFUGXYCCOU4ZMOMI4X4BGEJGZMLNJPCQ",
 };
 
+/**
+ * [googleMapObject description]
+ * @type {Object}
+ */
 var googleMapObject = {
     map: {},
     options: {
@@ -427,9 +387,16 @@ var googleMapObject = {
         styles: styleArray
     },
 
+    /**
+     * [InfoWindow description]
+     */
     largeInfoWindow: new google.maps.InfoWindow(),
-    infoWindowContent: '<div class="info-window"><div class="window-title">%name%</div><div class="window-address">%address%</div></div>',
-
+    infoWindowContent: '<div class="info-window"><div class="window-title"> <h4> %name% </h4> </div><div class="window-address"> %address% </div> <p>%phone%</p> </div><br> <p><a href="%weburl%">Website</a></p></div>',
+    /**
+     * [function description]
+     * @param  {[type]} viewM [description]
+     * @return {[type]}       [description]
+     */
     initMap: function(viewM) {
 
         googleMapObject.map = new google.maps.Map(document.getElementById('map'), googleMapObject.options);
@@ -437,205 +404,285 @@ var googleMapObject = {
     }
 };
 
+/**
+ * [function description]
+ * @param  {[type]} data   [description]
+ * @param  {[type]} parent [description]
+ * @return {[type]}        [description]
+ */
+var Location = function(data, parent) {
+    this.name = ko.observable(data.name);
+    this.address = ko.observable(data.address);
+    this.lat = ko.observable(data.lat);
+    this.lng = ko.observable(data.lng);
+    this.filter = ko.observableArray(data.filter);
+    /**
+     * [observable description]
+     * @param  {[type]} false [description]
+     * @return {[type]}       [description]
+     */
+    this.initialized = ko.observable(false);
 
-    // ___________________ AUTO COMPLETE __________________
-    // This autocomplete is for use in the search within time entry box.
-    var searchBox = new google.maps.places.SearchBox(
-        document.getElementById('places-search'));
-    // Bias the searchbox to within the bounds of the map.
-    searchBox.setBounds(map.getBounds());
+    this.photo = ko.observable(); // for holding photo
 
-
-    // Initiate InfoWindow
-    var largeInfowindow = new google.maps.InfoWindow();
-    var bounds = new google.maps.LatLngBounds();
-
-
-
-
-    // The following group uses the location array to create an array of markers on initialize.
-    for (var i = 0; i < locations.length; i++) {
-        // Get the position from the location array.
-        var position = locations[i].location;
-        var title = locations[i].title;
-        // Create a marker per location, and put into markers array.
-        var marker = new google.maps.Marker({
-            map: map,
-            position: position,
-            title: title,
-            animation: google.maps.Animation.DROP,
-            id: i
-        });
-        // Push the marker to our array of markers.
-        markers.push(marker);
-        // Create an onclick event to open the large infowindow at each marker.
-        marker.addListener('click', function() {
-            populateInfoWindow(this, largeInfowindow);
-        });
-        bounds.extend(markers[i].position);
-
-    }
-    map.fitBounds(bounds);
-
-
-    // Listen for the event fired when the user selects a prediction from the
-    // picklist and retrieve more details for that place.
-    searchBox.addListener('places_changed', function() {
-        searchBoxPlaces(this);
+    /**
+     * [Marker description]
+     * @param {[type]} position [description]
+     */
+    var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(data.lat, data.lng),
+        icon: 'images/marker.png'
     });
 
-    // Listen for the event fired when the user selects a prediction and clicks
-    // "go" more details for that place.
-    document.getElementById('go-places').addEventListener('click', textSearchPlaces);
-
-} //end initMap
-
-
-
-// This function populates the infowindow when the marker is clicked. We'll only allow
-// one infowindow which will open at the marker that is clicked, and populate based
-// on that markers position.
-function populateInfoWindow(marker, infowindow) {
-    // Check to make sure the infowindow is not already opened on this marker.
-    if (infowindow.marker != marker) {
-        // Clear the infowindow content to give the streetview time to load.
-        infowindow.setContent('');
-        infowindow.marker = marker;
-        // Make sure the marker property is cleared if the infowindow is closed.
-        infowindow.addListener('closeclick', function() {
-            infowindow.marker = null;
-        });
-        var streetViewService = new google.maps.StreetViewService();
-        var radius = 50;
-        // In case the status is OK, which means the pano was found, compute the
-        // position of the streetview image, then calculate the heading, then get a
-        // panorama from that and set the options
-        function getStreetView(data, status) {
-            if (status == google.maps.StreetViewStatus.OK) {
-                var nearStreetViewLocation = data.location.latLng;
-                var heading = google.maps.geometry.spherical.computeHeading(nearStreetViewLocation, marker.position);
-                // ------------------------- AJAX -----------------------------------
-                var fourSqAPI = {
-                    "client_id": "ITE0R1YK5FQLKGDOZSBEPT1NK1WOJNMXI2MF23UZK4CFJV1Q",
-                    "client_secret": "TETG0XTAT4LTIYCXOFUGXYCCOU4ZMOMI4X4BGEJGZMLNJPCQ",
-                };
-
-                var markerLenght = markers.length;
-                for (var i = 0; i < markerLenght; i++) {
-                    var foursquareAPIurl = 'https://api.foursquare.com/v2/venues/search?client_id=' + fourSqAPI.client_id + '&client_secret=' + fourSqAPI.client_secret + '&v=20130815' +
-                        '&ll=' + markers[i].position.lat() + ',' + markers[i].position.lng() + '&limit=10' + '&query=' + markers[i].title;
-
-
-                    $.ajax({
-                        url: foursquareAPIurl,
-                        dataType: 'json',
-                        type: 'get',
-                        cashe: false,
-                        success: function(data) {
-
-                            //looping data and push retrieved data into locations object
-                            $(data.response.venues).each(function(index, value) {
-                                title = value.name;
-                                phone = value.contact.formattedPhone;
-                                address = value.location.formattedAddress;
-
-                            });
-                        }
-                    });
-                    infowindow.setContent('<div>' + title + '<br>' + phone + '<br>' + address.city + '</div><div id="pano"></div>');
-                } //end loop
-
-
-                var panoramaOptions = {
-                    position: nearStreetViewLocation,
-                    pov: {
-                        heading: heading,
-                        pitch: 30
-                    }
-                };
-                var panorama = new google.maps.StreetViewPanorama(
-                    document.getElementById('pano'), panoramaOptions);
-            } else {
-                infowindow.setContent('<div>' + marker.title + '</div>' +
-                    '<div>No Street View Found</div>');
-            }
-        }
-        // Use streetview service to get the closest streetview image within
-        // 50 meters of the markers position
-        streetViewService.getPanoramaByLocation(marker.position, radius, getStreetView);
-        // Open the infowindow on the correct marker.
-        infowindow.open(map, marker);
-    }
-}
-
-// This function will loop through the listings and hide them all.
-function hideMarkers(markers) {
-    for (var i = 0; i < markers.length; i++) {
-        markers[i].setMap(null);
-    }
-}
-
-// This function fires when the user selects a searchbox picklist item.
-// It will do a nearby search using the selected query string or place.
-function searchBoxPlaces(searchBox) {
-    hideMarkers(placeMarkers);
-    var places = searchBox.getPlaces();
-    // For each place, get the icon, name and location.
-    createMarkersForPlaces(places);
-    if (places.length == 0) {
-        window.alert('We did not find any places matching that search!');
-    }
-}
-
-
-// This function firest when the user select "go" on the places search.
-// It will do a nearby search using the entered query string or place.
-function textSearchPlaces() {
-    var bounds = map.getBounds();
-    hideMarkers(placeMarkers);
-    var placesService = new google.maps.places.PlacesService(map);
-    placesService.textSearch({
-        query: document.getElementById('places-search').value,
-        bounds: bounds
-    }, function(results, status) {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
-            createMarkersForPlaces(results);
-        }
-    });
-}
-
-
-// This function creates markers for each place found in either places search.
-function createMarkersForPlaces(places) {
-    var bounds = new google.maps.LatLngBounds();
-    for (var i = 0; i < places.length; i++) {
-        var place = places[i];
-        var icon = {
-            url: place.icon,
-            size: new google.maps.Size(35, 35),
-            origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(15, 34),
-            scaledSize: new google.maps.Size(25, 25)
+    /**
+     * [addListener description]
+     * @param {[type]} marker   [description]
+     * @param {[type]} click    [description]
+     * @param {[type]} function [description]
+     */
+    google.maps.event.addListener(marker, 'click', (function(place, parent) {
+        return function() {
+            parent.displayGeoandMarker(place);
         };
-        // Create a marker for each place.
-        var marker = new google.maps.Marker({
-            map: map,
-            icon: icon,
-            title: place.name,
-            position: place.geometry.location,
-            id: place.id
+    })(this, parent));
+    this.marker = marker;
+};
+
+
+/**
+ * [function description]
+ * @param  {[type]} data [description]
+ * @return {[type]}      [description]
+ */
+var Filter = function(data) {
+    this.name = ko.observable(data.name);
+    this.on = ko.observable(true);
+};
+
+/**
+ * [function description]
+ * @return {[type]} [description]
+ */
+var ViewModel = function() {
+    var self = this;
+
+    self.filter = ko.observable('');
+    self.place = ko.observable();
+    self.initialized = false;
+    self.hasMarkers = false;
+    self.connectionError = ko.observable(false);
+    /**
+     * [function description]
+     * @return {[type]} [description]
+     */
+    self.init = function() {
+        var tempTagArr = [];
+        var tempFilterArr = [];
+
+
+        self.placeList = ko.observableArray([]);
+
+        /**
+         *
+         */
+        locations.forEach(function(place) {
+            self.placeList.push(new Location(place, self));
+
+
+            place.filter.forEach(function(tag) {
+                if (tempTagArr.indexOf(tag) < 0) {
+                    tempTagArr.push(tag);
+                }
+            });
         });
-        // If a marker is clicked, do a place details search on it in the next function.
-        marker.addListener('click', function() {
-            getPlacesDetails(this, place);
+
+        /**
+         * [forEach description]
+         * @param  {[type]} function [description]
+         * @return {[type]}          [description]
+         */
+        tempTagArr.forEach(function(tag) {
+            tempFilterArr.push(new Filter({
+                name: tag
+            }));
         });
-        placeMarkers.push(marker);
-        if (place.geometry.viewport) {
-            // Only geocodes have viewport.
-            bounds.union(place.geometry.viewport);
-        } else {
-            bounds.extend(place.geometry.location);
+
+        /**
+         * [observableArray description]
+         * @param  {[type]} tempFilterArr [description]
+         * @return {[type]}               [description]
+         */
+        self.filters = ko.observableArray(tempFilterArr);
+
+        /**
+         * [computed description]
+         * @param  {[type]} function [description]
+         * @return {[type]}          [description]
+         */
+        self.currentFilters = ko.computed(function() {
+            var tempCurrentFilters = [];
+
+
+            ko.utils.arrayForEach(self.filters(), function(filter) {
+                if (filter.on()) tempCurrentFilters.push(filter.name());
+            });
+
+            return tempCurrentFilters;
+        });
+
+        /**
+         * [computed description]
+         * @param  {[type]} function [description]
+         * @return {[type]}          [description]
+         */
+        self.filteredPlaces = ko.computed(function() {
+            var tempPlaces = ko.observableArray([]);
+            var returnPlaces = ko.observableArray([]);
+
+
+            ko.utils.arrayForEach(self.placeList(), function(place) {
+                var placeTags = place.filter();
+
+
+                var intersections = placeTags.filter(function(tag) {
+                    return self.currentFilters().indexOf(tag) != -1;
+                });
+
+
+                if (intersections.length > 0) tempPlaces.push(place);
+            });
+
+            var tempSearchFilter = self.filter().toLowerCase();
+
+
+            if (!tempSearchFilter) {
+                returnPlaces = tempPlaces();
+            } else {
+                returnPlaces = ko.utils.arrayFilter(tempPlaces(), function(place) {
+                    return place.name().toLowerCase().indexOf(tempSearchFilter) !== -1;
+                });
+            }
+
+
+            self.filterMarkers(returnPlaces);
+            return returnPlaces;
+
+        });
+
+        /**
+         * [if description]
+         * @param  {[type]} self [description]
+         * @return {[type]}      [description]
+         */
+        if (!self.hasMarkers) self.showMarkers();
+        self.initialized = true;
+    };
+
+
+    self.filterMarkers = function(filteredPlaces) {
+        ko.utils.arrayForEach(self.placeList(), function(place) {
+            if (filteredPlaces.indexOf(place) === -1) {
+                place.marker.setVisible(false);
+            } else {
+                place.marker.setVisible(true);
+            }
+        });
+    };
+
+
+    self.toggleFilter = function(filter) {
+        filter.on(!filter.on());
+    };
+
+
+    self.displayGeoandMarker = function(loc) {
+
+        if (self.place()) self.place().marker.setIcon('images/marker.png');
+        loc.marker.setIcon('images/selected.png');
+
+        self.connectionError(false);
+        if (!loc.initialized()) {
+
+            $.ajax({
+                    url: 'https://api.foursquare.com/v2/venues/search?ll=' + loc.lat() + ',' + loc.lng() + '&intent=match&name=' + loc.name() + '&client_id=' + fourSquareAPI.client_id + '&client_secret=' + fourSquareAPI.client_secret + '&v=20150326'
+                })
+                .done(function(data) {
+                    var venue = data.response.venues[0];
+
+                    loc.id = ko.observable(venue.id);
+
+                    if (venue.hasOwnProperty('url')) {
+                        loc.url = ko.observable(venue.url);
+                    }
+                    if (venue.hasOwnProperty('contact') && venue.contact.hasOwnProperty('formattedPhone')) {
+                        loc.phone = ko.observable(venue.contact.formattedPhone);
+                    }
+
+                    //Populate infoWindows
+                    /**
+                     * [setContent description]
+                     * @param {[type]} googleMapObject [description]
+                     */
+                    googleMapObject.largeInfoWindow.setContent(googleMapObject.infoWindowContent.replace('%name%', loc.name()).replace('%address%', loc.address()).replace('%phone%', loc.phone()).replace('%weburl%', loc.url()));
+                    googleMapObject.largeInfoWindow.open(googleMapObject.map, loc.marker);
+
+
+                })
+                .fail(function(err) {
+
+                    self.connectionError(true);
+                    self.scrollTo('#location-call-back-wrapper');
+                });
         }
-    }
-    map.fitBounds(bounds);
-}
+    };
+
+    /**
+     * [function description]
+     * @param  {[type]} el [description]
+     * @return {[type]}    [description]
+     */
+    self.scrollTo = function(el) {
+        $('html, body').animate({
+            scrollTop: $(el).offset().top
+        }, "slow");
+    };
+
+    /**
+     * [function description]
+     * @return {[type]} [description]
+     */
+    self.showMarkers = function() {
+        ko.utils.arrayForEach(self.placeList(), function(place) {
+            place.marker.setMap(googleMapObject.map);
+        });
+
+        self.hasMarkers = true;
+    };
+};
+
+/**
+ * [ViewModel description]
+ */
+var view = new ViewModel();
+
+/**
+ * [$ description]
+ * @param  {[type]} document [description]
+ * @return {[type]}          [description]
+ */
+$(document).ready(function() {
+    view.init();
+    ko.applyBindings(view);
+
+    $(window).on('resize', function() {
+        google.maps.event.trigger(googleMapObject.map, 'resize');
+        googleMapObject.map.setCenter(googleMapObject.options.center);
+    });
+});
+/**
+ * [addDomListener description]
+ * @param {[type]} window          [description]
+ * @param {[type]} load            [description]
+ * @param {[type]} googleMapObject [description]
+ */
+google.maps.event.addDomListener(window, 'load', googleMapObject.initMap(view));
