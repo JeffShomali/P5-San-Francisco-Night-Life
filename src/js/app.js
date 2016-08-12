@@ -392,9 +392,9 @@ var googleMapObject = {
      */
     largeInfoWindow: new google.maps.InfoWindow(),
     infoWindowTitle:   '<h3> %name% </h3> <br> ',
-    infoWindowAddress: '<span> %address% </span><br>',
-    infoWindowPhone:   '<span> %phone% </span><br>',
-    infoWindowLink:    '<span><a href="%weburl%">Website</a></span><br>',
+    infoWindowAddress: '<span class="glyphicon glyphicon-map-marker" >  Address: </span> ' + '%address%<br>',
+    infoWindowPhone:   '<span class="glyphicon glyphicon-earphone" >  Phone: </span> ' + '%phone% <br>',
+    infoWindowLink:    '<span class="glyphicon glyphicon-link" ><a href="%weburl%">  Website</span></a><br>',
 
 
     /**
@@ -418,8 +418,8 @@ var googleMapObject = {
 var Location = function(data, parent) {
     this.name = ko.observable(data.name);
     this.address = ko.observable(data.address);
-    this.lat = ko.observable(data.lat);
-    this.lng = ko.observable(data.lng);
+    this.thisLat = data.lat;
+    this.thisLng = data.lng;
     this.filter = ko.observableArray(data.filter);
 
 
@@ -454,6 +454,8 @@ var Location = function(data, parent) {
     })(this, parent));
     this.marker = marker;
 };
+
+
 
 
 /**
@@ -609,7 +611,7 @@ var ViewModel = function() {
         if (!loc.initialized()) {
 
             $.ajax({
-                    url: 'https://api.foursquare.com/v2/venues/search?ll=' + loc.lat() + ',' + loc.lng() + '&intent=match&name=' + loc.name() + '&client_id=' + fourSquareAPI.client_id + '&client_secret=' + fourSquareAPI.client_secret + '&v=20150326'
+                    url: 'https://api.foursquare.com/v2/venues/search?ll=' + loc.thisLat + ',' + loc.thisLng + '&intent=match&name=' + loc.name() + '&client_id=' + fourSquareAPI.client_id + '&client_secret=' + fourSquareAPI.client_secret + '&v=20150326'
                 })
                 .done(function(data) {
                     var venue = data.response.venues[0];
@@ -622,17 +624,6 @@ var ViewModel = function() {
                     contentString.push(venuAddress);
 
 
-                    if (venue.hasOwnProperty('url')) {
-                        loc.url = ko.observable(venue.url);
-                        var venuUrl = googleMapObject.infoWindowLink.replace("%weburl%", loc.url());
-                        contentString.push(venuUrl);
-
-
-                    } else {
-                        var venuUrl = googleMapObject.infoWindowLink.replace("%weburl%", '');
-                        contentString.push(venuUrl);
-                    }
-
                     if (venue.hasOwnProperty('contact') && venue.contact.hasOwnProperty('formattedPhone')) {
                         loc.phone = ko.observable(venue.contact.formattedPhone);
                         var venuPhone = googleMapObject.infoWindowPhone.replace("%phone%", loc.phone());
@@ -640,6 +631,17 @@ var ViewModel = function() {
                    }else {
                         var venuPhone = googleMapObject.infoWindowPhone.replace("%phone%", '');
                         contentString.push(venuPhone);
+                   }
+
+                   if (venue.hasOwnProperty('url')) {
+                       loc.url = ko.observable(venue.url);
+                       var venuUrl = googleMapObject.infoWindowLink.replace("%weburl%", loc.url());
+                       contentString.push(venuUrl);
+
+
+                   } else {
+                       var venuUrl = googleMapObject.infoWindowLink.replace("%weburl%", '');
+                       contentString.push(venuUrl);
                    }
 
 
