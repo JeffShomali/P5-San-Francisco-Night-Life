@@ -642,15 +642,27 @@ var ViewModel = function() {
                         contentString.push(venuPhone);
                    }
 
+
+                   /**
+                    * [displayContentString description]
+                    * @param  {[type]} _contentString [description]
+                    * @return {[type]}                [description]
+                    */
+                    function displayContentString(_contentString) {
+                         var length = _contentString.length;
+                         var out = '';
+                         for(var i = 0; i < length; i++) {
+                              out += _contentString[i];
+                         }
+                         return out;
+                    }
+
                     //Populate infoWindows
                     /**
                      * [setContent description]
                      * @param {[type]} googleMapObject [description]
                      */
-                    googleMapObject.largeInfoWindow.setContent(contentString[0] + contentString[1] + contentString[2] + contentString[3]);
-
-                    // googleMapObject.largeInfoWindow.setContent(googleMapObject.infoWindowContent.replace('%name%', loc.name()).replace('%address%', loc.address()));
-                    // googleMapObject.largeInfoWindow.setContent(venuName + venuAddress +venuPhone + venuUrl);
+                    googleMapObject.largeInfoWindow.setContent(displayContentString(contentString));
                     googleMapObject.largeInfoWindow.open(googleMapObject.map, loc.marker);
 
 
