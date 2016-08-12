@@ -391,7 +391,12 @@ var googleMapObject = {
      * [InfoWindow description]
      */
     largeInfoWindow: new google.maps.InfoWindow(),
-    infoWindowContent: '<div class="info-window"><div class="window-title"> <h4> %name% </h4> </div><div class="window-address"> %address% </div> <p>%phone%</p> </div><br> <p><a href="%weburl%">Website</a></p></div>',
+    infoWindowTitle:   '<h3> %name% </h3> <br> ',
+    infoWindowAddress: '<span> %address% </span><br>',
+    infoWindowPhone:   '<span> %phone% </span><br>',
+    infoWindowLink:    '<span><a href="%weburl%">Website</a></span><br>',
+
+
     /**
      * [function description]
      * @param  {[type]} viewM [description]
@@ -416,19 +421,21 @@ var Location = function(data, parent) {
     this.lat = ko.observable(data.lat);
     this.lng = ko.observable(data.lng);
     this.filter = ko.observableArray(data.filter);
+
+
     /**
      * [observable description]
      * @param  {[type]} false [description]
      * @return {[type]}       [description]
      */
     this.initialized = ko.observable(false);
-
     this.photo = ko.observable(); // for holding photo
 
     /**
      * [Marker description]
      * @param {[type]} position [description]
      */
+
     var marker = new google.maps.Marker({
         position: new google.maps.LatLng(data.lat, data.lng),
         icon: 'images/marker.png'
@@ -482,9 +489,7 @@ var ViewModel = function() {
 
         self.placeList = ko.observableArray([]);
 
-        /**
-         *
-         */
+
         locations.forEach(function(place) {
             self.placeList.push(new Location(place, self));
 
@@ -608,28 +613,49 @@ var ViewModel = function() {
                 })
                 .done(function(data) {
                     var venue = data.response.venues[0];
-
                     loc.id = ko.observable(venue.id);
+                    var contentString = [];
+
+                    var venuName = googleMapObject.infoWindowTitle.replace('%name%', loc.name());
+                    contentString.push(venuName);
+                    var venuAddress = googleMapObject.infoWindowAddress.replace('%address%', loc.address());
+                    contentString.push(venuAddress);
+
 
                     if (venue.hasOwnProperty('url')) {
                         loc.url = ko.observable(venue.url);
+                        var venuUrl = googleMapObject.infoWindowLink.replace("%weburl%", loc.url());
+                        contentString.push(venuUrl);
+
+
+                    } else {
+                        var venuUrl = googleMapObject.infoWindowLink.replace("%weburl%", '');
+                        contentString.push(venuUrl);
                     }
+
                     if (venue.hasOwnProperty('contact') && venue.contact.hasOwnProperty('formattedPhone')) {
                         loc.phone = ko.observable(venue.contact.formattedPhone);
-                    }
+                        var venuPhone = googleMapObject.infoWindowPhone.replace("%phone%", loc.phone());
+                        contentString.push(venuPhone);
+                   }else {
+                        var venuPhone = googleMapObject.infoWindowPhone.replace("%phone%", '');
+                        contentString.push(venuPhone);
+                   }
 
                     //Populate infoWindows
                     /**
                      * [setContent description]
                      * @param {[type]} googleMapObject [description]
                      */
-                    googleMapObject.largeInfoWindow.setContent(googleMapObject.infoWindowContent.replace('%name%', loc.name()).replace('%address%', loc.address()).replace('%phone%', loc.phone()).replace('%weburl%', loc.url()));
+                    googleMapObject.largeInfoWindow.setContent(contentString[0] + contentString[1] + contentString[2] + contentString[3]);
+
+                    // googleMapObject.largeInfoWindow.setContent(googleMapObject.infoWindowContent.replace('%name%', loc.name()).replace('%address%', loc.address()));
+                    // googleMapObject.largeInfoWindow.setContent(venuName + venuAddress +venuPhone + venuUrl);
                     googleMapObject.largeInfoWindow.open(googleMapObject.map, loc.marker);
 
 
                 })
                 .fail(function(err) {
-
                     self.connectionError(true);
                     self.scrollTo('#location-call-back-wrapper');
                 });
