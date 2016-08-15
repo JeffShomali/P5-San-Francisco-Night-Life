@@ -181,9 +181,9 @@ var locations = [{
 }];
 
 
-//Night Mode Style
+
 /**
- * [styleArray description]
+ * [Code credit by: https://snazzymaps.com/style/20053/papuportal-dark]
  * @type {Array}
  */
 var styleArray = [{
