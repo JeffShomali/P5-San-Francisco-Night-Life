@@ -17,3 +17,20 @@ This program have autocomplete search function for better user experience.
 
 ##### Filter function
 ![search](https://github.com/JeffShomali/P5-San-Francisco-Night-Life/blob/master/filter.gif?raw=true")
+
+## Download
+`git clone https://github.com/JeffShomali/P5-San-Francisco-Night-Life.git`
+
+or [download](https://github.com/JeffShomali/P5-San-Francisco-Night-Life/archive/master.zip) directly
+
+## Install
+install with [bower](http://bower.io)
+
+`$ bower install `
+
+## Usage
+open `dist` directory and run the following commands.
+
+`$ python -m SimpleHTTPServer`
+
+Open your browser and visit `localhost:8080` For downloading Node modules: `npm install`
