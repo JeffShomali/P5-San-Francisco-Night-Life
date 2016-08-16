@@ -1,0 +1,22 @@
+{
+  "name": "san-francisco-night-life",
+  "homepage": "https://github.com/JeffShomali/P5-San-Francisco-Sushi-Spot",
+  "authors": [
+    "Jeff Shomali <jeffshomali@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.0",
+    "knockout": "^3.4.0"
+  }
+}
