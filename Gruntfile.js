@@ -2,15 +2,15 @@ module.exports = function(grunt) {
     grunt.initConfig({
 
         // Inline Configuration
-     //    inlinecss: {
-     //        main: {
-     //            options: {},
-     //            files: {
-     //                'dist/index.html': 'src/index.html'
-        //
-     //            }
-     //        }
-     //    },
+        inlinecss: {
+            main: {
+                options: {},
+                files: {
+                    'dist/index.html': 'src/index.html'
+
+                }
+            }
+        },
 
         //HTML Minification
         htmlmin: {
@@ -34,22 +34,22 @@ module.exports = function(grunt) {
             }
         },
 
-       // Image minimize configuration
-     //          imagemin: { // Task
-     //              static: { // Target
-     //                  options: { // Target options
-     //                      optimizationLevel: 3,
-     //                      svgoPlugins: [{
-     //                          removeViewBox: false,
-        //
-     //                      }],
-        //
-     //                  },
-     //                  files: { // Dictionary of files
-     //                      'dist/images/SF-Walpaper.jpg': 'src/images/SF-Walpaper.jpg'
-     //                  }
-     //              }
-     //    },
+     //   Image minimize configuration
+              imagemin: { // Task
+                  static: { // Target
+                      options: { // Target options
+                          optimizationLevel: 3,
+                          svgoPlugins: [{
+                              removeViewBox: false,
+
+                          }],
+
+                      },
+                      files: { // Dictionary of files
+                          'dist/images/SF-Walpaper.jpg': 'src/images/SF-Walpaper.jpg'
+                      }
+                  }
+        },
 
         // Uglify configuration
         uglify: {
