@@ -9,8 +9,11 @@ This tiny project built with [Google Map API](https://developers.google.com/maps
 ## Functionality:
 Program statically display some of my favorite location in San Francisco Bay Area and show a marker for each one. If user clicks on marker program retrieves some more information from third party library in this case `foursquare` and display to a user.
 
-#### Autocomplete Functionality:
+##### Autocomplete Functionality:
 
-     This program have autocomplete search function for better user experience.
+This program have autocomplete search function for better user experience.
 
-     [search]: 
+![search](https://github.com/JeffShomali/P5-San-Francisco-Night-Life/blob/master/search.gif?raw=true")
+
+##### Filter function
+![search](https://github.com/JeffShomali/P5-San-Francisco-Night-Life/blob/master/filter.gif?raw=true")
