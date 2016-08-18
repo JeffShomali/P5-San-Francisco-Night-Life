@@ -1,16 +1,6 @@
 module.exports = function(grunt) {
     grunt.initConfig({
 
-        // Inline Configuration
-        inlinecss: {
-            main: {
-                options: {},
-                files: {
-                    'dist/index.html': 'src/index.html'
-
-                }
-            }
-        },
 
         //HTML Minification
         htmlmin: {
@@ -35,9 +25,9 @@ module.exports = function(grunt) {
         },
 
         //   Image minimize configuration
-        imagemin: { // Task
-            static: { // Target
-                options: { // Target options
+        imagemin: { 
+            static: {
+                options: {
                     optimizationLevel: 3,
                     svgoPlugins: [{
                         removeViewBox: false,
@@ -70,7 +60,7 @@ module.exports = function(grunt) {
     }); //end config
 
     // Loading Tasks
-    grunt.loadNpmTasks('grunt-inline-css');
+
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
