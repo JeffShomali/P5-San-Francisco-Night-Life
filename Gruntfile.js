@@ -34,21 +34,26 @@ module.exports = function(grunt) {
             }
         },
 
-     //   Image minimize configuration
-              imagemin: { // Task
-                  static: { // Target
-                      options: { // Target options
-                          optimizationLevel: 3,
-                          svgoPlugins: [{
-                              removeViewBox: false,
+        //   Image minimize configuration
+        imagemin: { // Task
+            static: { // Target
+                options: { // Target options
+                    optimizationLevel: 3,
+                    svgoPlugins: [{
+                        removeViewBox: false,
 
-                          }],
+                    }],
 
-                      },
-                      files: { // Dictionary of files
-                          'dist/images/SF-Walpaper.jpg': 'src/images/SF-Walpaper.jpg'
-                      }
-                  }
+                },
+                files: { // Dictionary of files
+                    'dist/images/SF-Walpaper.jpg': 'src/images/SF-Walpaper.jpg',
+                    'dist/images/filter.gif': 'src/images/filter.gif',
+                    'dist/images/marker.png': 'src/images/marker.png',
+                    'dist/images/search.gif': 'src/images/search.gif',
+                    'dist/images/selected.png': 'src/images/selected.png'
+
+                }
+            }
         },
 
         // Uglify configuration
@@ -65,10 +70,10 @@ module.exports = function(grunt) {
     }); //end config
 
     // Loading Tasks
-    // grunt.loadNpmTasks('grunt-inline-css');
+    grunt.loadNpmTasks('grunt-inline-css');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    // grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
     grunt.registerTask('default', ['htmlmin', 'cssmin', 'uglify']);

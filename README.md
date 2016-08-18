@@ -26,7 +26,10 @@ or [download](https://github.com/JeffShomali/P5-San-Francisco-Night-Life/archive
 ## Install
 install with [bower](http://bower.io)
 
-`$ bower install `
+run `bower install`
+run `npm install -g grunt` to install grunt globally
+run `npm install `to install grunt tasks
+run `grunt` to build app properly
 
 ## Usage
 open `dist` directory and run the following commands.
