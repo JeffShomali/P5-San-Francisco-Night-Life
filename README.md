@@ -13,10 +13,10 @@ Program statically display some of my favorite location in San Francisco Bay Are
 
 This program have autocomplete search function for better user experience.
 
-![search](https://github.com/JeffShomali/P5-San-Francisco-Night-Life/blob/master/search.gif?raw=true")
+![search](https://github.com/JeffShomali/P5-San-Francisco-Night-Life/blob/master/src/images/search.gif?raw=true")
 
 ##### Filter function
-![search](https://github.com/JeffShomali/P5-San-Francisco-Night-Life/blob/master/filter.gif?raw=true")
+![search](https://github.com/JeffShomali/P5-San-Francisco-Night-Life/blob/master/src/images/filter.gif?raw=true")
 
 ## Download
 `git clone https://github.com/JeffShomali/P5-San-Francisco-Night-Life.git`
