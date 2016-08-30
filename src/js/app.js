@@ -1,5 +1,6 @@
 "use strict";
 
+
 /**
  * [locations description]
  * @type {Array}
@@ -390,11 +391,17 @@ var googleMapObject = {
     /**
      * [InfoWindow description]
      */
-    largeInfoWindow: new google.maps.InfoWindow(),
-    infoWindowTitle:   '<h3> %name% </h3> <br> ',
-    infoWindowAddress: '<span class="glyphicon glyphicon-map-marker" >  Address: </span> ' + '%address%<br>',
-    infoWindowPhone:   '<span class="glyphicon glyphicon-earphone" >  Phone: </span> ' + '%phone% <br>',
-    infoWindowLink:    '<span class="glyphicon glyphicon-link" ><a href="%weburl%">  Website</span></a><br>',
+
+
+
+
+     largeInfoWindow: new google.maps.InfoWindow(),
+     infoWindowTitle: '<h3> %name% </h3> <br> ',
+     infoWindowAddress: '<span class="glyphicon glyphicon-map-marker" >  Address: </span> ' + '%address%<br>',
+     infoWindowPhone: '<span class="glyphicon glyphicon-earphone" >  Phone: </span> ' + '%phone% <br>',
+     infoWindowLink: '<span class="glyphicon glyphicon-link" ><a href="%weburl%">  Website</span></a><br>',
+
+
 
 
     /**
@@ -403,8 +410,9 @@ var googleMapObject = {
      * @return {[type]}       [description]
      */
     initMap: function(viewM) {
-
+        console.log("initMap");
         googleMapObject.map = new google.maps.Map(document.getElementById('map'), googleMapObject.options);
+        googleMapObject.map.setCenter(googleMapObject.options.center);
         if (viewM.initialized && !viewM.hasMarkers) viewM.showMarkers();
     }
 };
@@ -416,11 +424,11 @@ var googleMapObject = {
  * @return {[type]}        [description]
  */
 var Location = function(data, parent) {
-    this.name = ko.observable(data.name);
+    this.name    = ko.observable(data.name);
     this.address = ko.observable(data.address);
     this.thisLat = data.lat;
     this.thisLng = data.lng;
-    this.filter = ko.observableArray(data.filter);
+    this.filter  = ko.observableArray(data.filter);
 
 
     /**
@@ -473,6 +481,7 @@ var Filter = function(data) {
  * @return {[type]} [description]
  */
 var ViewModel = function() {
+     console.log("ViewModel");
     var self = this;
 
     self.filter = ko.observable('');
@@ -545,7 +554,6 @@ var ViewModel = function() {
         self.filteredPlaces = ko.computed(function() {
             var tempPlaces = ko.observableArray([]);
             var returnPlaces = ko.observableArray([]);
-
 
             ko.utils.arrayForEach(self.placeList(), function(place) {
                 var placeTags = place.filter();
@@ -628,35 +636,35 @@ var ViewModel = function() {
                         loc.phone = ko.observable(venue.contact.formattedPhone);
                         var venuPhone = googleMapObject.infoWindowPhone.replace("%phone%", loc.phone());
                         contentString.push(venuPhone);
-                   }else {
+                    } else {
                         var venuPhone = googleMapObject.infoWindowPhone.replace("%phone%", '');
                         contentString.push(venuPhone);
-                   }
+                    }
 
-                   if (venue.hasOwnProperty('url')) {
-                       loc.url = ko.observable(venue.url);
-                       var venuUrl = googleMapObject.infoWindowLink.replace("%weburl%", loc.url());
-                       contentString.push(venuUrl);
-
-
-                   } else {
-                       var venuUrl = googleMapObject.infoWindowLink.replace("%weburl%", '');
-                       contentString.push(venuUrl);
-                   }
+                    if (venue.hasOwnProperty('url')) {
+                        loc.url = ko.observable(venue.url);
+                        var venuUrl = googleMapObject.infoWindowLink.replace("%weburl%", loc.url());
+                        contentString.push(venuUrl);
 
 
-                   /**
-                    * [displayContentString description]
-                    * @param  {[type]} _contentString [description]
-                    * @return {[type]}                [description]
-                    */
+                    } else {
+                        var venuUrl = googleMapObject.infoWindowLink.replace("%weburl%", '');
+                        contentString.push(venuUrl);
+                    }
+
+
+                    /**
+                     * [displayContentString description]
+                     * @param  {[type]} _contentString [description]
+                     * @return {[type]}                [description]
+                     */
                     function displayContentString(_contentString) {
-                         var length = _contentString.length;
-                         var out = '';
-                         for(var i = 0; i < length; i++) {
-                              out += _contentString[i];
-                         }
-                         return out;
+                        var length = _contentString.length;
+                        var out = '';
+                        for (var i = 0; i < length; i++) {
+                            out += _contentString[i];
+                        }
+                        return out;
                     }
 
                     //Populate infoWindows
@@ -703,26 +711,35 @@ var ViewModel = function() {
 /**
  * [ViewModel description]
  */
-var view = new ViewModel();
+// var view = new ViewModel();
 
 /**
  * [$ description]
  * @param  {[type]} document [description]
  * @return {[type]}          [description]
  */
-$(document).ready(function() {
-    view.init();
-    ko.applyBindings(view);
-
-    $(window).on('resize', function() {
-        google.maps.event.trigger(googleMapObject.map, 'resize');
-        googleMapObject.map.setCenter(googleMapObject.options.center);
-    });
-});
+// $(document).ready(function() {
+//     view.init();
+//     ko.applyBindings(view);
+//
+//     $(window).on('resize', function() {
+//         google.maps.event.trigger(googleMapObject.map, 'resize');
+//         googleMapObject.map.setCenter(googleMapObject.options.center);
+//     });
+// });
 /**
  * [addDomListener description]
  * @param {[type]} window          [description]
  * @param {[type]} load            [description]
  * @param {[type]} googleMapObject [description]
  */
-google.maps.event.addDomListener(window, 'load', googleMapObject.initMap(view));
+// google.maps.event.addDomListener(window, 'load', googleMapObject.initMap(view));
+
+
+function startApp() {
+    var view = new ViewModel();
+    view.init();
+    ko.applyBindings(view);
+    googleMapObject.initMap(view);
+    console.log("end of script");
+}
