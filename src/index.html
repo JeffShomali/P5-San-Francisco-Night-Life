@@ -54,10 +54,13 @@
         Designed by &#9825; in San Francisco
     </footer>
 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
 
-    <script src="..\bower_components/jquery/dist/jquery.js"></script>
-    <script src='..\bower_components/knockout/dist/knockout.js'></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+    <!-- load app.js before googls maps Api because startApp function has to be loaded before it is called -->
     <script src="js/app.js"></script>
+    <!-- load google maps api asynchronously, startApp is set as the callback -->
+    <!-- add onError method -->
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDCkrxgjCisgIPA10JIogkI9oopPKqN9yY&callback=startApp" async defer></script>
 </body>
 

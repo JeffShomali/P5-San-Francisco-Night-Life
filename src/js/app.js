@@ -395,26 +395,26 @@ var googleMapObject = {
 
 
 
-     largeInfoWindow: new google.maps.InfoWindow(),
-     infoWindowTitle: '<h3> %name% </h3> <br> ',
-     infoWindowAddress: '<span class="glyphicon glyphicon-map-marker" >  Address: </span> ' + '%address%<br>',
-     infoWindowPhone: '<span class="glyphicon glyphicon-earphone" >  Phone: </span> ' + '%phone% <br>',
-     infoWindowLink: '<span class="glyphicon glyphicon-link" ><a href="%weburl%">  Website</span></a><br>',
-
-
-
 
     /**
      * [function description]
      * @param  {[type]} viewM [description]
      * @return {[type]}       [description]
      */
-    initMap: function(viewM) {
+    // initMap: function(viewM) {
+    initMap: function() {
+
         console.log("initMap");
+        // initialize the map
         googleMapObject.map = new google.maps.Map(document.getElementById('map'), googleMapObject.options);
         googleMapObject.map.setCenter(googleMapObject.options.center);
-        if (viewM.initialized && !viewM.hasMarkers) viewM.showMarkers();
-    }
+        //if (viewM.initialized && !viewM.hasMarkers) viewM.showMarkers();
+
+    },
+    infoWindowTitle: '<h3> %name% </h3> <br> ',
+    infoWindowAddress: '<span class="glyphicon glyphicon-map-marker" >  Address: </span> ' + '%address%<br>',
+    infoWindowPhone: '<span class="glyphicon glyphicon-earphone" >  Phone: </span> ' + '%phone% <br>',
+    infoWindowLink: '<span class="glyphicon glyphicon-link" ><a href="%weburl%">  Website</span></a><br>'
 };
 
 /**
@@ -708,38 +708,16 @@ var ViewModel = function() {
     };
 };
 
-/**
- * [ViewModel description]
- */
-// var view = new ViewModel();
-
-/**
- * [$ description]
- * @param  {[type]} document [description]
- * @return {[type]}          [description]
- */
-// $(document).ready(function() {
-//     view.init();
-//     ko.applyBindings(view);
-//
-//     $(window).on('resize', function() {
-//         google.maps.event.trigger(googleMapObject.map, 'resize');
-//         googleMapObject.map.setCenter(googleMapObject.options.center);
-//     });
-// });
-/**
- * [addDomListener description]
- * @param {[type]} window          [description]
- * @param {[type]} load            [description]
- * @param {[type]} googleMapObject [description]
- */
-// google.maps.event.addDomListener(window, 'load', googleMapObject.initMap(view));
-
-
 function startApp() {
-    var view = new ViewModel();
-    view.init();
-    ko.applyBindings(view);
-    googleMapObject.initMap(view);
-    console.log("end of script");
+    // initialize map
+    googleMapObject.initMap();
+    // initialize infowindow
+    googleMapObject.largeInfoWindow = new google.maps.InfoWindow();
+    // initialize ViewModel/ create ViewModel instance
+    var viewModel = new ViewModel();
+
+    viewModel.init();
+
+    ko.applyBindings(viewModel);
+    // googleMapObject.initMap(view);
 }
