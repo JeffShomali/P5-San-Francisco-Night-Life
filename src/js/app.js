@@ -715,9 +715,6 @@ function startApp() {
     googleMapObject.largeInfoWindow = new google.maps.InfoWindow();
     // initialize ViewModel/ create ViewModel instance
     var viewModel = new ViewModel();
-
     viewModel.init();
-
     ko.applyBindings(viewModel);
-    // googleMapObject.initMap(view);
 }
