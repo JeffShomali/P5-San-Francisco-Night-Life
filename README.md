@@ -26,10 +26,7 @@ or [download](https://github.com/JeffShomali/P5-San-Francisco-Night-Life/archive
 ## Install and usage
 Install with [bower](http://bower.io)
 
-run `bower install`
-
-open `src` directory and open `index.html`
-
+open `src` directory and run `bower install` then open `index.html`
 
 
 ## For usage optimized version (optional)
