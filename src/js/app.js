@@ -408,7 +408,6 @@ var googleMapObject = {
         // initialize the map
         googleMapObject.map = new google.maps.Map(document.getElementById('map'), googleMapObject.options);
         googleMapObject.map.setCenter(googleMapObject.options.center);
-        //if (viewM.initialized && !viewM.hasMarkers) viewM.showMarkers();
 
     },
     infoWindowTitle: '<h3> %name% </h3> <br> ',
@@ -424,11 +423,11 @@ var googleMapObject = {
  * @return {[type]}        [description]
  */
 var Location = function(data, parent) {
-    this.name    = ko.observable(data.name);
+    this.name = ko.observable(data.name);
     this.address = ko.observable(data.address);
     this.thisLat = data.lat;
     this.thisLng = data.lng;
-    this.filter  = ko.observableArray(data.filter);
+    this.filter = ko.observableArray(data.filter);
 
 
     /**
@@ -445,6 +444,7 @@ var Location = function(data, parent) {
      */
 
     var marker = new google.maps.Marker({
+        animation: google.maps.Animation.DROP,
         position: new google.maps.LatLng(data.lat, data.lng),
         icon: 'images/marker.png'
     });
@@ -481,7 +481,7 @@ var Filter = function(data) {
  * @return {[type]} [description]
  */
 var ViewModel = function() {
-     console.log("ViewModel");
+    console.log("ViewModel");
     var self = this;
 
     self.filter = ko.observable('');
@@ -610,10 +610,22 @@ var ViewModel = function() {
     };
 
 
-    self.displayGeoandMarker = function(loc) {
 
-        if (self.place()) self.place().marker.setIcon('images/marker.png');
-        loc.marker.setIcon('images/selected.png');
+    self.displayGeoandMarker = function(loc) {
+        ko.utils.arrayForEach(self.placeList(), function(loc) {
+            loc.marker.setIcon('images/marker.png');
+        });
+
+        loc.marker.setAnimation(google.maps.Animation.BOUNCE);
+        setTimeout(function() {
+             loc.marker.setIcon('images/selected.png');
+            loc.marker.setAnimation(null);
+
+       }, 1500);
+
+     // //    if (self.place()) self.place().marker.setIcon('images/marker.png');
+     //            loc.marker.setIcon('images/selected.png');
+
 
         self.connectionError(false);
         if (!loc.initialized()) {
@@ -637,7 +649,7 @@ var ViewModel = function() {
                         var venuPhone = googleMapObject.infoWindowPhone.replace("%phone%", loc.phone());
                         contentString.push(venuPhone);
                     } else {
-                        var venuPhone = googleMapObject.infoWindowPhone.replace("%phone%", '');
+                        var venuPhone = googleMapObject.infoWindowPhone.replace("%phone%", 'No number available');
                         contentString.push(venuPhone);
                     }
 
@@ -648,7 +660,7 @@ var ViewModel = function() {
 
 
                     } else {
-                        var venuUrl = googleMapObject.infoWindowLink.replace("%weburl%", '');
+                        var venuUrl = googleMapObject.infoWindowLink.replace("Website", 'No link available').replace('<a href="%weburl%">', " ");
                         contentString.push(venuUrl);
                     }
 
@@ -666,6 +678,9 @@ var ViewModel = function() {
                         }
                         return out;
                     }
+
+
+
 
                     //Populate infoWindows
                     /**
